@@ -1,0 +1,5 @@
+﻿  main.cpp
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Algostax.vcxproj -> C:\Users\simeo\Documents\school projects\10grade-christmas-luck-algostax\Algostax\x64\Debug\Algostax.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
