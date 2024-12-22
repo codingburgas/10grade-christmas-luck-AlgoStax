@@ -5,11 +5,9 @@
 *.slo
 *.lo
 *.o
-*.obj
 
 # Precompiled Headers
 *.gch
-*.pch
 
 # Compiled Dynamic libraries
 *.so
@@ -25,6 +23,5 @@
 *.a
 
 # Executables
-*.exe
 *.out
 *.app
