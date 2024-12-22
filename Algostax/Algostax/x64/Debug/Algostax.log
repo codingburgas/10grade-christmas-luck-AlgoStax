@@ -1,7 +1,4 @@
 ﻿  main.cpp
-C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(165,9): error C2660: 'DrawRectangle': function does not take 4 arguments
-      C:\vcpkg\installed\x64-windows\include\raylib.h(1239,12):
-      see declaration of 'DrawRectangle'
-      C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(165,9):
-      while trying to match the argument list '(int, int, int, int)'
-  
+  Algostax.vcxproj -> C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\x64\Debug\Algostax.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

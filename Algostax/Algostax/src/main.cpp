@@ -48,6 +48,9 @@ int main(void)
     int standingHeight = (int)(standingTexture.height * scale);
 
 
+    Rectangle medTable = { 461, 365, 115, 280 };
+    Color transparentColor = { 0, 0, 0, 128 };
+
     SetTargetFPS(60);
 
     while (!WindowShouldClose())
@@ -116,6 +119,7 @@ int main(void)
         ClearBackground(RAYWHITE);
 
         DrawTexture(backgroundTexture, 0, 0, WHITE);
+        DrawRectangleRec(medTable, transparentColor);
 
         if (initialMovementTimer < initialMovementDuration)
         {
