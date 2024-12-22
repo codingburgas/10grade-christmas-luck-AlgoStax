@@ -47,6 +47,7 @@ int main(void)
     int standingWidth = (int)(standingTexture.width * scale);
     int standingHeight = (int)(standingTexture.height * scale);
 
+
     SetTargetFPS(60);
 
     while (!WindowShouldClose())
@@ -161,8 +162,6 @@ int main(void)
                 Rectangle{ 0, 0, (float)standingWidth, (float)standingHeight },
                 characterPosition, 0.0f, WHITE);
         }
-
-        DrawRectangle(465, 355, 120, 300, RAYWHITE);
 
         EndDrawing();
     }
