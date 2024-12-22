@@ -1,4 +1,5 @@
 #include "pch.h"
+#include <cmath> 
 
 int main(void)
 {
@@ -31,13 +32,10 @@ int main(void)
     float frameTimer = 0.0f;
     const float frameSpeed = 0.4f;
 
-    Vector2 characterPosition = { -485, -900 };
+    Vector2 characterPosition = { 485, 900 };
     float speed = 100.0f;
     bool isMoving = false;
     Vector2 velocity = { 0.0f, 0.0f };
-
-    float initialMovementTimer = 0.0f;
-    const float initialMovementDuration = 1.0f;
 
     float scale = 0.2f;
 
@@ -47,64 +45,78 @@ int main(void)
     int standingWidth = (int)(standingTexture.width * scale);
     int standingHeight = (int)(standingTexture.height * scale);
 
-
     Rectangle medTable = { 461, 365, 115, 280 };
-    Color transparentColor = { 0, 0, 0, 128 };
+    Rectangle medTableCollision = { 470, 375, 95, 260 };
+    Color transparentColor = { 100, 0, 0, 0 };
+
+    Rectangle characterRect = { characterPosition.x, characterPosition.y, targetWidth, targetHeight };
+
+    bool initialMoveNorth = true;
+    float initialMoveDistance = 100.0f; // Total distance to move north
+    float initialMoveSpeed = 50.0f;     // Speed of movement north
 
     SetTargetFPS(60);
 
     while (!WindowShouldClose())
     {
-
         float deltaTime = GetFrameTime();
 
-        if (initialMovementTimer < initialMovementDuration)
+        velocity = { 0.0f, 0.0f };
+
+        if (initialMoveNorth)
         {
-            velocity = Vector2{ 0.0f, speed };
+            float moveAmount = initialMoveSpeed * deltaTime;
+            characterPosition.y -= moveAmount;
+            initialMoveDistance -= moveAmount;
 
-            frameTimer += deltaTime;
-            if (frameTimer >= frameSpeed)
+            if (initialMoveDistance <= 0)
             {
-                frameTimer = 0.0f;
-                currentFrame++;
-                if (currentFrame >= totalFrames) currentFrame = 0;
+                initialMoveNorth = false; // Stop moving north when done
             }
-
-            initialMovementTimer += deltaTime;
         }
         else
         {
+            if (IsKeyDown(KEY_W))
+            {
+                velocity.y -= speed;
+            }
             if (IsKeyDown(KEY_S))
             {
-                velocity = Vector2{ 0.0f, -speed };
-                isMoving = true;
+                velocity.y += speed;
             }
-            else if (IsKeyDown(KEY_W))
+            if (IsKeyDown(KEY_A))
             {
-                velocity = Vector2{ 0.0f, speed };
-                isMoving = true;
+                velocity.x -= speed;
             }
-            else if (IsKeyDown(KEY_D))
+            if (IsKeyDown(KEY_D))
             {
-                velocity = Vector2{ -speed, 0.0f };
-                isMoving = true;
+                velocity.x += speed;
             }
-            else if (IsKeyDown(KEY_A))
+
+            if (velocity.x != 0.0f && velocity.y != 0.0f)
             {
-                velocity = Vector2{ speed, 0.0f };
-                isMoving = true;
+                velocity.x /= sqrt(2.0f);
+                velocity.y /= sqrt(2.0f);
             }
-            else
+
+            Vector2 nextPosition = {
+                characterPosition.x + velocity.x * deltaTime,
+                characterPosition.y + velocity.y * deltaTime
+            };
+
+            characterRect.x = nextPosition.x;
+            characterRect.y = nextPosition.y;
+
+            if (!CheckCollisionRecs(characterRect, medTableCollision))
             {
-                velocity = Vector2{ 0.0f, 0.0f };
-                isMoving = false;
+                characterPosition = nextPosition;
             }
+
+            isMoving = (velocity.x != 0.0f || velocity.y != 0.0f);
         }
 
-        characterPosition.x += velocity.x * deltaTime;
-        characterPosition.y += velocity.y * deltaTime;
-
-        if (isMoving)
+        // Update animation frame if moving
+        if (isMoving || initialMoveNorth)
         {
             frameTimer += deltaTime;
             if (frameTimer >= frameSpeed)
@@ -121,50 +133,45 @@ int main(void)
         DrawTexture(backgroundTexture, 0, 0, WHITE);
         DrawRectangleRec(medTable, transparentColor);
 
-        if (initialMovementTimer < initialMovementDuration)
+        // If the character is moving or still in the initial movement
+        if (isMoving || initialMoveNorth)
         {
-            DrawTexturePro(backFrames[currentFrame],
-                Rectangle{ 0, 0, (float)backFrames[0].width, (float)backFrames[0].height },
-                Rectangle{ 0, 0, (float)targetWidth, (float)targetHeight },
-                characterPosition, 0.0f, WHITE);
-        }
-        else if (isMoving)
-        {
-            if (velocity.y > 0)
+            if (velocity.y < 0 || initialMoveNorth) // Moving up (north) or during the initial upward movement
             {
+                // Alternate backFrames[0] and backFrames[1]
                 DrawTexturePro(backFrames[currentFrame],
                     Rectangle{ 0, 0, (float)backFrames[0].width, (float)backFrames[0].height },
-                    Rectangle{ 0, 0, (float)targetWidth, (float)targetHeight },
-                    characterPosition, 0.0f, WHITE);
+                    Rectangle{ characterPosition.x, characterPosition.y, (float)targetWidth, (float)targetHeight },
+                    Vector2{ 0.0f, 0.0f }, 0.0f, WHITE);
             }
-            else if (velocity.y < 0)
+            else if (velocity.y > 0) // Moving down (south)
             {
                 DrawTexturePro(frontFrames[currentFrame],
                     Rectangle{ 0, 0, (float)frontFrames[0].width, (float)frontFrames[0].height },
-                    Rectangle{ 0, 0, (float)targetWidth, (float)targetHeight },
-                    characterPosition, 0.0f, WHITE);
+                    Rectangle{ characterPosition.x, characterPosition.y, (float)targetWidth, (float)targetHeight },
+                    Vector2{ 0.0f, 0.0f }, 0.0f, WHITE);
             }
-            else if (velocity.x < 0)
-            {
-                DrawTexturePro(leftFrames[currentFrame],
-                    Rectangle{ 0, 0, (float)leftFrames[0].width, (float)leftFrames[0].height },
-                    Rectangle{ 0, 0, (float)targetWidth, (float)targetHeight },
-                    characterPosition, 0.0f, WHITE);
-            }
-            else if (velocity.x > 0)
+            else if (velocity.x < 0) // Moving left
             {
                 DrawTexturePro(rightFrames[currentFrame],
                     Rectangle{ 0, 0, (float)rightFrames[0].width, (float)rightFrames[0].height },
-                    Rectangle{ 0, 0, (float)targetWidth, (float)targetHeight },
-                    characterPosition, 0.0f, WHITE);
+                    Rectangle{ characterPosition.x, characterPosition.y, (float)targetWidth, (float)targetHeight },
+                    Vector2{ 0.0f, 0.0f }, 0.0f, WHITE);
+            }
+            else if (velocity.x > 0) // Moving right
+            {
+                DrawTexturePro(leftFrames[currentFrame],
+                    Rectangle{ 0, 0, (float)leftFrames[0].width, (float)leftFrames[0].height },
+                    Rectangle{ characterPosition.x, characterPosition.y, (float)targetWidth, (float)targetHeight },
+                    Vector2{ 0.0f, 0.0f }, 0.0f, WHITE);
             }
         }
         else
         {
             DrawTexturePro(standingTexture,
                 Rectangle{ 0, 0, (float)standingTexture.width, (float)standingTexture.height },
-                Rectangle{ 0, 0, (float)standingWidth, (float)standingHeight },
-                characterPosition, 0.0f, WHITE);
+                Rectangle{ characterPosition.x, characterPosition.y, (float)standingWidth, (float)standingHeight },
+                Vector2{ 0.0f, 0.0f }, 0.0f, WHITE);
         }
 
         EndDrawing();
