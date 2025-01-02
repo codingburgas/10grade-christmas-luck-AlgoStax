@@ -1,7 +1,7 @@
-#include "characterWalk.h"
+#include "pch.h"
 
 void UpdateCharacterMovement(Vector2& characterPosition, Vector2& velocity, Rectangle& characterRect,
-    const Rectangle& medTable, const Rectangle& bed, float& frameTimer,
+    const Rectangle& medTable, const Rectangle& bed, const Rectangle screenBounds, float& frameTimer,
     int& currentFrame, bool& isMoving, bool& initialMoveNorth,
     float& initialMoveDistance, float& initialMoveSpeed, float deltaTime,
     float speed, float frameSpeed, int totalFrames)
@@ -14,14 +14,14 @@ void UpdateCharacterMovement(Vector2& characterPosition, Vector2& velocity, Rect
         initialMoveDistance -= moveAmount;
 
         if (initialMoveDistance <= 0) {
-            initialMoveNorth = false; 
+            initialMoveNorth = false;
         }
     }
     else {
-        if (IsKeyDown(KEY_W)) velocity.y -= speed; 
-        if (IsKeyDown(KEY_S)) velocity.y += speed; 
-        if (IsKeyDown(KEY_A)) velocity.x -= speed; 
-        if (IsKeyDown(KEY_D)) velocity.x += speed; 
+        if (IsKeyDown(KEY_W)) velocity.y -= speed;
+        if (IsKeyDown(KEY_S)) velocity.y += speed;
+        if (IsKeyDown(KEY_A)) velocity.x -= speed;
+        if (IsKeyDown(KEY_D)) velocity.x += speed;
 
         if (velocity.x != 0.0f && velocity.y != 0.0f) {
             velocity.x /= sqrt(2.0f);
@@ -36,7 +36,12 @@ void UpdateCharacterMovement(Vector2& characterPosition, Vector2& velocity, Rect
         Rectangle nextRect = { nextPosition.x, nextPosition.y, characterRect.width, characterRect.height };
 
         if (!CheckCollisionRecs(nextRect, medTable) && !CheckCollisionRecs(nextRect, bed)) {
-            characterPosition = nextPosition;
+            if (nextRect.x >= screenBounds.x &&
+                nextRect.y >= screenBounds.y &&
+                nextRect.x + nextRect.width <= screenBounds.x + screenBounds.width &&
+                nextRect.y + nextRect.height <= screenBounds.y + screenBounds.height) {
+                characterPosition = nextPosition;
+            }
         }
 
         isMoving = (velocity.x != 0.0f || velocity.y != 0.0f);
@@ -51,9 +56,8 @@ void UpdateCharacterMovement(Vector2& characterPosition, Vector2& velocity, Rect
         }
     }
 
-
     characterRect.x = characterPosition.x;
-    characterRect.y = characterPosition.y;
+    characterRect.y = characterPosition.y;;
 }
 
 

@@ -2,7 +2,7 @@
 #include "pch.h"
 
 void UpdateCharacterMovement(Vector2& characterPosition, Vector2& velocity, Rectangle& characterRect,
-    const Rectangle& medTable, const Rectangle& bed, float& frameTimer,
+    const Rectangle& medTable, const Rectangle& bed, const Rectangle screenBounds, float& frameTimer,
     int& currentFrame, bool& isMoving, bool& initialMoveNorth,
     float& initialMoveDistance, float& initialMoveSpeed, float deltaTime,
     float speed, float frameSpeed, int totalFrames);

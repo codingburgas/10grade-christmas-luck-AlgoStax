@@ -1,4 +1,4 @@
-#include "characterWalk.h"
+#include "pch.h"
 
 int main(void)
 {
@@ -54,6 +54,8 @@ int main(void)
     float initialMoveDistance = 100.0f;
     float initialMoveSpeed = 50.0f;
 
+    Rectangle screenBounds = { 90, 190, 840, 750 };
+
     SetTargetFPS(60);
 
     while (!WindowShouldClose())
@@ -61,9 +63,10 @@ int main(void)
         float deltaTime = GetFrameTime();
 
         UpdateCharacterMovement(characterPosition, velocity, characterRect,
-            medTable, bed, frameTimer, currentFrame, isMoving,
-            initialMoveNorth, initialMoveDistance, initialMoveSpeed,
-            deltaTime, speed, frameSpeed, totalFrames);
+             medTable, bed, screenBounds, frameTimer,
+            currentFrame, isMoving,initialMoveNorth,
+            initialMoveDistance, initialMoveSpeed, deltaTime,
+            speed, frameSpeed, totalFrames);
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
@@ -76,9 +79,6 @@ int main(void)
             0.0f,
             WHITE
         );
-
-        DrawRectangleRec(bed, transparentColor);
-        DrawRectangleRec(medTable, transparentColor);
 
         if (isMoving || initialMoveNorth) {
             if (velocity.y < 0 || initialMoveNorth) {
