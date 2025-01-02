@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "characterWalk.h"
 
 int main(void)
 {
@@ -113,5 +113,4 @@ int main(void)
     }
 
     CloseWindow();
-    return 0;
 }

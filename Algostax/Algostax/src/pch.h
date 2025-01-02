@@ -1,4 +1,4 @@
 #pragma once
-#include "raylib.h"
 #include <cmath>
-#include "characterWalk.h"
+#include "GLFW/glfw3.h"
+#include "raylib.h"
