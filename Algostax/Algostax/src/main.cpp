@@ -1,5 +1,4 @@
 #include "pch.h"
-#include <cmath> 
 
 int main(void)
 {
@@ -14,12 +13,12 @@ int main(void)
     backFrames[1] = LoadTexture("../assets/doctor/back-walk2.png");
 
     Texture2D leftFrames[2];
-    leftFrames[0] = LoadTexture("../assets/doctor/side-walk2.png");
-    leftFrames[1] = LoadTexture("../assets/doctor/left-walk1.png");
+    leftFrames[0] = LoadTexture("../assets/doctor/side-walk1.png");
+    leftFrames[1] = LoadTexture("../assets/doctor/right-walk1.png");
 
     Texture2D rightFrames[2];
-    rightFrames[0] = LoadTexture("../assets/doctor/side-walk1.png");
-    rightFrames[1] = LoadTexture("../assets/doctor/right-walk1.png");
+    rightFrames[0] = LoadTexture("../assets/doctor/side-walk2.png");
+    rightFrames[1] = LoadTexture("../assets/doctor/left-walk1.png");
 
     Texture2D frontFrames[2];
     frontFrames[0] = LoadTexture("../assets/doctor/front-walk1.png");
@@ -33,7 +32,7 @@ int main(void)
     const float frameSpeed = 0.4f;
 
     Vector2 characterPosition = { 485, 900 };
-    float speed = 100.0f;
+    float speed = 125.0f;
     bool isMoving = false;
     Vector2 velocity = { 0.0f, 0.0f };
 
@@ -45,15 +44,15 @@ int main(void)
     int standingWidth = (int)(standingTexture.width * scale);
     int standingHeight = (int)(standingTexture.height * scale);
 
-    Rectangle medTable = { 461, 365, 115, 280 };
-    Rectangle medTableCollision = { 470, 375, 95, 260 };
+    Rectangle medTable = { 470, 375, 95, 260 };
+    Rectangle bed = { 810, 160, 100, 250 };
     Color transparentColor = { 100, 0, 0, 0 };
 
-    Rectangle characterRect = { characterPosition.x, characterPosition.y, targetWidth, targetHeight };
+    Rectangle characterRect = { characterPosition.x, characterPosition.y, (float)targetWidth, (float)targetHeight };
 
     bool initialMoveNorth = true;
-    float initialMoveDistance = 100.0f; // Total distance to move north
-    float initialMoveSpeed = 50.0f;     // Speed of movement north
+    float initialMoveDistance = 100.0f;
+    float initialMoveSpeed = 50.0f;
 
     SetTargetFPS(60);
 
@@ -61,115 +60,42 @@ int main(void)
     {
         float deltaTime = GetFrameTime();
 
-        velocity = { 0.0f, 0.0f };
-
-        if (initialMoveNorth)
-        {
-            float moveAmount = initialMoveSpeed * deltaTime;
-            characterPosition.y -= moveAmount;
-            initialMoveDistance -= moveAmount;
-
-            if (initialMoveDistance <= 0)
-            {
-                initialMoveNorth = false; // Stop moving north when done
-            }
-        }
-        else
-        {
-            if (IsKeyDown(KEY_W))
-            {
-                velocity.y -= speed;
-            }
-            if (IsKeyDown(KEY_S))
-            {
-                velocity.y += speed;
-            }
-            if (IsKeyDown(KEY_A))
-            {
-                velocity.x -= speed;
-            }
-            if (IsKeyDown(KEY_D))
-            {
-                velocity.x += speed;
-            }
-
-            if (velocity.x != 0.0f && velocity.y != 0.0f)
-            {
-                velocity.x /= sqrt(2.0f);
-                velocity.y /= sqrt(2.0f);
-            }
-
-            Vector2 nextPosition = {
-                characterPosition.x + velocity.x * deltaTime,
-                characterPosition.y + velocity.y * deltaTime
-            };
-
-            characterRect.x = nextPosition.x;
-            characterRect.y = nextPosition.y;
-
-            if (!CheckCollisionRecs(characterRect, medTableCollision))
-            {
-                characterPosition = nextPosition;
-            }
-
-            isMoving = (velocity.x != 0.0f || velocity.y != 0.0f);
-        }
-
-        // Update animation frame if moving
-        if (isMoving || initialMoveNorth)
-        {
-            frameTimer += deltaTime;
-            if (frameTimer >= frameSpeed)
-            {
-                frameTimer = 0.0f;
-                currentFrame++;
-                if (currentFrame >= totalFrames) currentFrame = 0;
-            }
-        }
+        UpdateCharacterMovement(characterPosition, velocity, characterRect,
+            medTable, bed, frameTimer, currentFrame, isMoving,
+            initialMoveNorth, initialMoveDistance, initialMoveSpeed,
+            deltaTime, speed, frameSpeed, totalFrames);
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
-        DrawTexture(backgroundTexture, 0, 0, WHITE);
+        DrawTexturePro(
+            backgroundTexture,
+            Rectangle{ 0, 0, (float)backgroundTexture.width, (float)backgroundTexture.height },
+            Rectangle{ 0, 0, 1024, 1024 },
+            Vector2{ 0.0f, 0.0f },
+            0.0f,
+            WHITE
+        );
+
+        DrawRectangleRec(bed, transparentColor);
         DrawRectangleRec(medTable, transparentColor);
 
-        // If the character is moving or still in the initial movement
-        if (isMoving || initialMoveNorth)
-        {
-            if (velocity.y < 0 || initialMoveNorth) // Moving up (north) or during the initial upward movement
-            {
-                // Alternate backFrames[0] and backFrames[1]
-                DrawTexturePro(backFrames[currentFrame],
-                    Rectangle{ 0, 0, (float)backFrames[0].width, (float)backFrames[0].height },
-                    Rectangle{ characterPosition.x, characterPosition.y, (float)targetWidth, (float)targetHeight },
-                    Vector2{ 0.0f, 0.0f }, 0.0f, WHITE);
+        if (isMoving || initialMoveNorth) {
+            if (velocity.y < 0 || initialMoveNorth) {
+                DrawCharacterMovement(backFrames, currentFrame, characterPosition, targetWidth, targetHeight);
             }
-            else if (velocity.y > 0) // Moving down (south)
-            {
-                DrawTexturePro(frontFrames[currentFrame],
-                    Rectangle{ 0, 0, (float)frontFrames[0].width, (float)frontFrames[0].height },
-                    Rectangle{ characterPosition.x, characterPosition.y, (float)targetWidth, (float)targetHeight },
-                    Vector2{ 0.0f, 0.0f }, 0.0f, WHITE);
+            else if (velocity.y > 0) {
+                DrawCharacterMovement(frontFrames, currentFrame, characterPosition, targetWidth, targetHeight);
             }
-            else if (velocity.x < 0) // Moving left
-            {
-                DrawTexturePro(rightFrames[currentFrame],
-                    Rectangle{ 0, 0, (float)rightFrames[0].width, (float)rightFrames[0].height },
-                    Rectangle{ characterPosition.x, characterPosition.y, (float)targetWidth, (float)targetHeight },
-                    Vector2{ 0.0f, 0.0f }, 0.0f, WHITE);
+            else if (velocity.x < 0) {
+                DrawCharacterMovement(leftFrames, currentFrame, characterPosition, targetWidth, targetHeight);
             }
-            else if (velocity.x > 0) // Moving right
-            {
-                DrawTexturePro(leftFrames[currentFrame],
-                    Rectangle{ 0, 0, (float)leftFrames[0].width, (float)leftFrames[0].height },
-                    Rectangle{ characterPosition.x, characterPosition.y, (float)targetWidth, (float)targetHeight },
-                    Vector2{ 0.0f, 0.0f }, 0.0f, WHITE);
+            else if (velocity.x > 0) {
+                DrawCharacterMovement(rightFrames, currentFrame, characterPosition, targetWidth, targetHeight);
             }
         }
-        else
-        {
-            DrawTexturePro(standingTexture,
-                Rectangle{ 0, 0, (float)standingTexture.width, (float)standingTexture.height },
+        else {
+            DrawTexturePro(standingTexture, Rectangle{ 0, 0, (float)standingTexture.width, (float)standingTexture.height },
                 Rectangle{ characterPosition.x, characterPosition.y, (float)standingWidth, (float)standingHeight },
                 Vector2{ 0.0f, 0.0f }, 0.0f, WHITE);
         }
@@ -179,8 +105,7 @@ int main(void)
 
     UnloadTexture(backgroundTexture);
     UnloadTexture(standingTexture);
-    for (int i = 0; i < 2; i++)
-    {
+    for (int i = 0; i < 2; i++) {
         UnloadTexture(backFrames[i]);
         UnloadTexture(leftFrames[i]);
         UnloadTexture(rightFrames[i]);
@@ -188,6 +113,5 @@ int main(void)
     }
 
     CloseWindow();
-
     return 0;
 }
