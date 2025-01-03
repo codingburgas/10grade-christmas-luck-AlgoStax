@@ -1,4 +1,2 @@
-﻿  main.cpp
-C:\Users\Lacho\OneDrive - ПГКПИ - Бургас\Работен плот\Нова папка (3)\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(131,80): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Lacho\OneDrive - ПГКПИ - Бургас\Работен плот\Нова папка (3)\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(131,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Algostax.vcxproj -> C:\Users\Lacho\OneDrive - ПГКПИ - Бургас\Работен плот\Нова папка (3)\10grade-christmas-luck-AlgoStax\Algostax\x64\Debug\Algostax.exe
+﻿  characterWalk.cpp
+  Algostax.vcxproj -> C:\Users\Lacho\OneDrive - ПГКПИ - Бургас\Работен плот\Project-Dev\10grade-christmas-luck-AlgoStax\Algostax\x64\Debug\Algostax.exe

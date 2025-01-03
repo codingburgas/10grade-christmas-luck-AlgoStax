@@ -9,6 +9,8 @@ int main(void)
     Texture2D defaultBackground = LoadTexture("../assets/backgrounds/clinic-background.png");
     Texture2D skeletonBackground = LoadTexture("../assets/backgrounds/Skeleton-on-table.png");
     Texture2D CardiovascularBackground = LoadTexture("../assets/backgrounds/Cardiovascular-system.png");
+    Texture2D NerveBackground = LoadTexture("../assets/backgrounds/Nerve-system.png");
+    Texture2D MuscularBackground = LoadTexture("../assets/backgrounds/Muscular-system.png");
 
     Texture2D currentBackground = defaultBackground; 
 
@@ -60,8 +62,9 @@ int main(void)
 
     Rectangle screenBounds = { 90, 190, 840, 750 };
 
-    
-    Rectangle computerArea = { 730, 700, 100, 100 }; 
+
+    Rectangle computerArea = { 730, 700, 140, 60 };
+    Rectangle interractComputerArea = { 720, 700, 110, 80 };
     bool interactionScreenActive = false;
 
     SetTargetFPS(60);
@@ -70,14 +73,14 @@ int main(void)
     {
         float deltaTime = GetFrameTime();
 
-        
+
         characterRect.x = characterPosition.x;
         characterRect.y = characterPosition.y;
 
         if (!interactionScreenActive)
         {
             UpdateCharacterMovement(characterPosition, velocity, characterRect,
-                medTable, bed,computerArea, screenBounds, frameTimer,
+                medTable, bed, computerArea, screenBounds, frameTimer,
                 currentFrame, isMoving, initialMoveNorth,
                 initialMoveDistance, initialMoveSpeed, deltaTime,
                 speed, frameSpeed, totalFrames);
@@ -89,7 +92,7 @@ int main(void)
         if (!interactionScreenActive)
         {
             DrawTexturePro(
-                currentBackground, 
+                currentBackground,
                 Rectangle{ 0, 0, (float)currentBackground.width, (float)currentBackground.height },
                 Rectangle{ 0, 0, 1024, 1024 },
                 Vector2{ 0.0f, 0.0f },
@@ -122,13 +125,9 @@ int main(void)
                     Vector2{ 0.0f, 0.0f }, 0.0f, WHITE);
             }
 
-           
-            
-
-            
-            if (CheckCollisionRecs(characterRect, computerArea))
+            if (CheckCollisionRecs(characterRect, interractComputerArea))
             {
-                DrawText("Press E to interact", computerArea.x, computerArea.y - 20, 20, RED);
+                DrawText("Press E to interact", interractComputerArea.x, interractComputerArea.y - 20, 20, RED);
                 if (IsKeyDown(KEY_E))
                 {
                     interactionScreenActive = true;
@@ -144,7 +143,7 @@ int main(void)
             DrawText("1. Skeletal system", 400, 300, 30, WHITE);
             DrawText("2. Cardiovascular system", 400, 350, 30,WHITE);
             DrawText("3. Nervous system", 400, 400, 30, WHITE);
-            DrawText("4. Muscles", 400, 450, 30, WHITE);
+            DrawText("4. Muscular system", 400, 450, 30, WHITE);
             DrawText("5. Reset Clinic", 400, 500, 30, WHITE);
             DrawText("6. Exit Computer", 400, 550, 30, RED);
 
@@ -156,6 +155,16 @@ int main(void)
             if (IsKeyDown(KEY_TWO))
             {
                 currentBackground = CardiovascularBackground;
+            }
+
+            if (IsKeyDown(KEY_THREE))
+            {
+                currentBackground = NerveBackground;
+            }
+
+            if (IsKeyDown(KEY_FOUR))
+            {
+                currentBackground = MuscularBackground;
             }
 
             if (IsKeyDown(KEY_FIVE)) {
@@ -175,6 +184,9 @@ int main(void)
     UnloadTexture(defaultBackground);
     UnloadTexture(skeletonBackground);
     UnloadTexture(standingTexture);
+    UnloadTexture(CardiovascularBackground);
+    UnloadTexture(NerveBackground);
+    UnloadTexture(MuscularBackground);
     for (int i = 0; i < 2; i++)
     {
         UnloadTexture(backFrames[i]);

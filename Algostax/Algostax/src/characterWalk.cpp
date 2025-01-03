@@ -35,16 +35,16 @@ void UpdateCharacterMovement(Vector2& characterPosition, Vector2& velocity, Rect
 
         Rectangle nextRect = { nextPosition.x, nextPosition.y, characterRect.width, characterRect.height };
 
-        if (!CheckCollisionRecs(nextRect, medTable) && !CheckCollisionRecs(nextRect, bed)) {
+        // Prevent movement through obstacles
+        if (!CheckCollisionRecs(nextRect, medTable) && !CheckCollisionRecs(nextRect, bed) &&
+            !CheckCollisionRecs(nextRect, computerArea)) {
             if (nextRect.x >= screenBounds.x &&
                 nextRect.y >= screenBounds.y &&
                 nextRect.x + nextRect.width <= screenBounds.x + screenBounds.width &&
                 nextRect.y + nextRect.height <= screenBounds.y + screenBounds.height) {
                 characterPosition = nextPosition;
-                
             }
-        }  
-
+        }
 
         isMoving = (velocity.x != 0.0f || velocity.y != 0.0f);
     }
@@ -59,8 +59,9 @@ void UpdateCharacterMovement(Vector2& characterPosition, Vector2& velocity, Rect
     }
 
     characterRect.x = characterPosition.x;
-    characterRect.y = characterPosition.y;;
+    characterRect.y = characterPosition.y;
 }
+
 
 
 
