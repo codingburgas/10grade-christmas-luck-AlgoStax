@@ -6,7 +6,11 @@ int main(void)
     const int screenHeight = 1024;
     InitWindow(screenWidth, screenHeight, "Algostax");
 
-    Texture2D backgroundTexture = LoadTexture("../assets/backgrounds/clinic-background.png");
+    Texture2D defaultBackground = LoadTexture("../assets/backgrounds/clinic-background.png");
+    Texture2D skeletonBackground = LoadTexture("../assets/backgrounds/Skeleton-on-table.png");
+    Texture2D CardiovascularBackground = LoadTexture("../assets/backgrounds/Cardiovascular-system.png");
+
+    Texture2D currentBackground = defaultBackground; 
 
     Texture2D backFrames[2];
     backFrames[0] = LoadTexture("../assets/doctor/back-walk1.png");
@@ -85,8 +89,8 @@ int main(void)
         if (!interactionScreenActive)
         {
             DrawTexturePro(
-                backgroundTexture,
-                Rectangle{ 0, 0, (float)backgroundTexture.width, (float)backgroundTexture.height },
+                currentBackground, 
+                Rectangle{ 0, 0, (float)currentBackground.width, (float)currentBackground.height },
                 Rectangle{ 0, 0, 1024, 1024 },
                 Vector2{ 0.0f, 0.0f },
                 0.0f,
@@ -118,7 +122,9 @@ int main(void)
                     Vector2{ 0.0f, 0.0f }, 0.0f, WHITE);
             }
 
+           
             
+
             
             if (CheckCollisionRecs(characterRect, computerArea))
             {
@@ -136,21 +142,38 @@ int main(void)
 
             DrawText("Systems:", 400, 200, 40, WHITE);
             DrawText("1. Skeletal system", 400, 300, 30, WHITE);
-            DrawText("2. Cardiovascular system", 400, 350, 30, WHITE);
+            DrawText("2. Cardiovascular system", 400, 350, 30,WHITE);
             DrawText("3. Nervous system", 400, 400, 30, WHITE);
             DrawText("4. Muscles", 400, 450, 30, WHITE);
-            DrawText("5. EXIT", 400, 500, 30, WHITE);
+            DrawText("5. Reset Clinic", 400, 500, 30, WHITE);
+            DrawText("6. Exit Computer", 400, 550, 30, RED);
 
-            if (IsKeyDown(KEY_FIVE)) 
+            if (IsKeyDown(KEY_ONE))
             {
-                interactionScreenActive = false;
+                currentBackground = skeletonBackground; 
+            }
+
+            if (IsKeyDown(KEY_TWO))
+            {
+                currentBackground = CardiovascularBackground;
+            }
+
+            if (IsKeyDown(KEY_FIVE)) {
+                currentBackground = defaultBackground;
+            }
+
+            if (IsKeyDown(KEY_SIX))
+            {
+                interactionScreenActive = false; 
             }
         }
 
         EndDrawing();
     }
 
-    UnloadTexture(backgroundTexture);
+   
+    UnloadTexture(defaultBackground);
+    UnloadTexture(skeletonBackground);
     UnloadTexture(standingTexture);
     for (int i = 0; i < 2; i++)
     {
