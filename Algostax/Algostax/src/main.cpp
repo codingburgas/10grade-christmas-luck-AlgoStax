@@ -13,7 +13,7 @@ int main(void)
     Texture2D MuscularBackground = LoadTexture("../assets/backgrounds/Muscular-system.png");
     Texture2D OrgansBackground = LoadTexture("../assets/backgrounds/Organs.png");
 
-    Texture2D currentBackground = defaultBackground; 
+    Texture2D currentBackground = defaultBackground;
 
     Texture2D backFrames[2];
     backFrames[0] = LoadTexture("../assets/doctor/back-walk1.png");
@@ -72,6 +72,23 @@ int main(void)
 
     Rectangle screenBounds = { 90, 190, 840, 750 };
     bool interactionScreenActive = false;
+
+    Texture2D systemTextures[5];
+    systemTextures[0] = skeletonBackground;
+    systemTextures[1] = CardiovascularBackground;
+    systemTextures[2] = NerveBackground;
+    systemTextures[3] = MuscularBackground;
+    systemTextures[4] = OrgansBackground;
+
+    const char* systemLabels[] = {
+        "Skeletal system",
+        "Cardiovascular system",
+        "Nervous system",
+        "Muscular system",
+        "Organs"
+    };
+
+    int currentSystemIndex = 0;
 
     SetTargetFPS(60);
 
@@ -133,7 +150,7 @@ int main(void)
 
             if (CheckCollisionRecs(characterRect, interractComputerArea))
             {
-                DrawText("Press E to interact", (float)characterRect.x, (float)characterRect.y - 20, 20, BLACK);
+                DrawText("Press E to interact", characterRect.x, characterRect.y - 20, 20, RED);
                 if (IsKeyDown(KEY_E))
                 {
                     interactionScreenActive = true;
@@ -142,53 +159,46 @@ int main(void)
         }
         else
         {
-            
-            ClearBackground(DARKGRAY);
+            // Draw the system background
+            DrawTexturePro(
+                systemTextures[currentSystemIndex],
+                Rectangle{ 0, 0, (float)systemTextures[currentSystemIndex].width, (float)systemTextures[currentSystemIndex].height },
+                Rectangle{ 0, 0, (float)screenWidth, (float)screenHeight },
+                Vector2{ 0.0f, 0.0f },
+                0.0f,
+                WHITE);
 
-            DrawText("Systems:", 400, 200, 40, WHITE);
-            DrawText("1. Skeletal system", 400, 300, 30, WHITE);
-            DrawText("2. Cardiovascular system", 400, 350, 30,WHITE);
-            DrawText("3. Nervous system", 400, 400, 30, WHITE);
-            DrawText("4. Muscular system", 400, 450, 30, WHITE);
-            DrawText("5. Organs", 400, 500, 30, WHITE);
-            DrawText("6. Reset Clinic", 400, 550, 30, WHITE);
-            DrawText("7. Exit Computer", 400, 600, 30, RED);
+            // Draw the menu controls
+            DrawText("<", 50, screenHeight / 2 - 20, 40, WHITE);
+            DrawText(">", screenWidth - 70, screenHeight / 2 - 20, 40, WHITE);
 
-            if (IsKeyDown(KEY_ONE))
+            DrawText(systemLabels[currentSystemIndex], screenWidth / 2 - MeasureText(systemLabels[currentSystemIndex], 30 / 2), 0, 40, BLACK);
+
+            if (IsKeyPressed(KEY_LEFT) || IsKeyPressed(KEY_A))
             {
-                currentBackground = skeletonBackground; 
+                currentSystemIndex = (currentSystemIndex - 1 + 5) % 5;
             }
 
-            if (IsKeyDown(KEY_TWO))
+            if (IsKeyPressed(KEY_RIGHT) || IsKeyPressed(KEY_D))
             {
-                currentBackground = CardiovascularBackground;
+                currentSystemIndex = (currentSystemIndex + 1) % 5;
             }
 
-            if (IsKeyDown(KEY_THREE))
+            DrawText("Press J to exit systems menu", 380, screenHeight - 170, 20, BLACK);
+
+            DrawText("Press Enter comfirm your choice", 360, screenHeight - 150, 20, BLACK);
+
+            if (IsKeyPressed(KEY_J))
             {
-                currentBackground = NerveBackground;
+                interactionScreenActive = false;
             }
 
-            if (IsKeyDown(KEY_FOUR))
+            if (IsKeyPressed(KEY_ENTER))
             {
-                currentBackground = MuscularBackground;
-            }
-
-            if (IsKeyDown(KEY_FIVE))
-            {
-                currentBackground = OrgansBackground;
-            }
-
-            if (IsKeyDown(KEY_SIX)) {
-                currentBackground = defaultBackground;
-            }
-
-            if (IsKeyDown(KEY_SEVEN))
-            {
-                interactionScreenActive = false; 
+                currentBackground = systemTextures[currentSystemIndex];
+                interactionScreenActive = false;
             }
         }
-
         if (CheckCollisionRecs(characterRect, medTableInterraction))
         {
             DrawText("Press E to interact", (float)characterRect.x, (float)characterRect.y - 20, 20, BLACK);
@@ -201,7 +211,7 @@ int main(void)
         EndDrawing();
     }
 
-   
+
     UnloadTexture(defaultBackground);
     UnloadTexture(skeletonBackground);
     UnloadTexture(standingTexture);
