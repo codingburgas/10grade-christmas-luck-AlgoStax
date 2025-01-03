@@ -1,7 +1,7 @@
 #include "pch.h"
 
 void UpdateCharacterMovement(Vector2& characterPosition, Vector2& velocity, Rectangle& characterRect,
-    const Rectangle& medTable, const Rectangle& bed, const Rectangle screenBounds, float& frameTimer,
+    const Rectangle& medTable, const Rectangle& bed, const Rectangle& computerArea, const Rectangle screenBounds, float& frameTimer,
     int& currentFrame, bool& isMoving, bool& initialMoveNorth,
     float& initialMoveDistance, float& initialMoveSpeed, float deltaTime,
     float speed, float frameSpeed, int totalFrames)
@@ -41,8 +41,10 @@ void UpdateCharacterMovement(Vector2& characterPosition, Vector2& velocity, Rect
                 nextRect.x + nextRect.width <= screenBounds.x + screenBounds.width &&
                 nextRect.y + nextRect.height <= screenBounds.y + screenBounds.height) {
                 characterPosition = nextPosition;
+                
             }
-        }
+        }  
+
 
         isMoving = (velocity.x != 0.0f || velocity.y != 0.0f);
     }

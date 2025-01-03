@@ -56,48 +56,95 @@ int main(void)
 
     Rectangle screenBounds = { 90, 190, 840, 750 };
 
+    
+    Rectangle computerArea = { 730, 700, 100, 100 }; 
+    bool interactionScreenActive = false;
+
     SetTargetFPS(60);
 
     while (!WindowShouldClose())
     {
         float deltaTime = GetFrameTime();
 
-        UpdateCharacterMovement(characterPosition, velocity, characterRect,
-             medTable, bed, screenBounds, frameTimer,
-            currentFrame, isMoving,initialMoveNorth,
-            initialMoveDistance, initialMoveSpeed, deltaTime,
-            speed, frameSpeed, totalFrames);
+        
+        characterRect.x = characterPosition.x;
+        characterRect.y = characterPosition.y;
+
+        if (!interactionScreenActive)
+        {
+            UpdateCharacterMovement(characterPosition, velocity, characterRect,
+                medTable, bed,computerArea, screenBounds, frameTimer,
+                currentFrame, isMoving, initialMoveNorth,
+                initialMoveDistance, initialMoveSpeed, deltaTime,
+                speed, frameSpeed, totalFrames);
+        }
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
-        DrawTexturePro(
-            backgroundTexture,
-            Rectangle{ 0, 0, (float)backgroundTexture.width, (float)backgroundTexture.height },
-            Rectangle{ 0, 0, 1024, 1024 },
-            Vector2{ 0.0f, 0.0f },
-            0.0f,
-            WHITE
-        );
+        if (!interactionScreenActive)
+        {
+            DrawTexturePro(
+                backgroundTexture,
+                Rectangle{ 0, 0, (float)backgroundTexture.width, (float)backgroundTexture.height },
+                Rectangle{ 0, 0, 1024, 1024 },
+                Vector2{ 0.0f, 0.0f },
+                0.0f,
+                WHITE);
 
-        if (isMoving || initialMoveNorth) {
-            if (velocity.y < 0 || initialMoveNorth) {
-                DrawCharacterMovement(backFrames, currentFrame, characterPosition, targetWidth, targetHeight);
+            if (isMoving || initialMoveNorth)
+            {
+                if (velocity.y < 0 || initialMoveNorth)
+                {
+                    DrawCharacterMovement(backFrames, currentFrame, characterPosition, targetWidth, targetHeight);
+                }
+                else if (velocity.y > 0)
+                {
+                    DrawCharacterMovement(frontFrames, currentFrame, characterPosition, targetWidth, targetHeight);
+                }
+                else if (velocity.x < 0)
+                {
+                    DrawCharacterMovement(leftFrames, currentFrame, characterPosition, targetWidth, targetHeight);
+                }
+                else if (velocity.x > 0)
+                {
+                    DrawCharacterMovement(rightFrames, currentFrame, characterPosition, targetWidth, targetHeight);
+                }
             }
-            else if (velocity.y > 0) {
-                DrawCharacterMovement(frontFrames, currentFrame, characterPosition, targetWidth, targetHeight);
+            else
+            {
+                DrawTexturePro(standingTexture, Rectangle{ 0, 0, (float)standingTexture.width, (float)standingTexture.height },
+                    Rectangle{ characterPosition.x, characterPosition.y, (float)standingWidth, (float)standingHeight },
+                    Vector2{ 0.0f, 0.0f }, 0.0f, WHITE);
             }
-            else if (velocity.x < 0) {
-                DrawCharacterMovement(leftFrames, currentFrame, characterPosition, targetWidth, targetHeight);
-            }
-            else if (velocity.x > 0) {
-                DrawCharacterMovement(rightFrames, currentFrame, characterPosition, targetWidth, targetHeight);
+
+            
+            
+            if (CheckCollisionRecs(characterRect, computerArea))
+            {
+                DrawText("Press E to interact", computerArea.x, computerArea.y - 20, 20, RED);
+                if (IsKeyDown(KEY_E))
+                {
+                    interactionScreenActive = true;
+                }
             }
         }
-        else {
-            DrawTexturePro(standingTexture, Rectangle{ 0, 0, (float)standingTexture.width, (float)standingTexture.height },
-                Rectangle{ characterPosition.x, characterPosition.y, (float)standingWidth, (float)standingHeight },
-                Vector2{ 0.0f, 0.0f }, 0.0f, WHITE);
+        else
+        {
+            
+            ClearBackground(DARKGRAY);
+
+            DrawText("Systems:", 400, 200, 40, WHITE);
+            DrawText("1. Skeletal system", 400, 300, 30, WHITE);
+            DrawText("2. Cardiovascular system", 400, 350, 30, WHITE);
+            DrawText("3. Nervous system", 400, 400, 30, WHITE);
+            DrawText("4. Muscles", 400, 450, 30, WHITE);
+            DrawText("5. EXIT", 400, 500, 30, WHITE);
+
+            if (IsKeyDown(KEY_FIVE)) 
+            {
+                interactionScreenActive = false;
+            }
         }
 
         EndDrawing();
@@ -105,7 +152,8 @@ int main(void)
 
     UnloadTexture(backgroundTexture);
     UnloadTexture(standingTexture);
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 2; i++)
+    {
         UnloadTexture(backFrames[i]);
         UnloadTexture(leftFrames[i]);
         UnloadTexture(rightFrames[i]);
