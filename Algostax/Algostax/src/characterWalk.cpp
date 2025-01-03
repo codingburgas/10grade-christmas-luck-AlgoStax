@@ -1,7 +1,7 @@
 #include "pch.h"
 
 void UpdateCharacterMovement(Vector2& characterPosition, Vector2& velocity, Rectangle& characterRect,
-    const Rectangle& medTable, const Rectangle& bed, const Rectangle& computerArea, const Rectangle screenBounds, float& frameTimer,
+    const Rectangle& medTable, const Rectangle& bed, const Rectangle& computerArea, const Rectangle& computerLeft, const Rectangle& topLeftTable, const Rectangle& tvTable, const Rectangle& drawer, const Rectangle& drawer2, const Rectangle& drawer3, const Rectangle screenBounds, float& frameTimer,
     int& currentFrame, bool& isMoving, bool& initialMoveNorth,
     float& initialMoveDistance, float& initialMoveSpeed, float deltaTime,
     float speed, float frameSpeed, int totalFrames)
@@ -35,9 +35,11 @@ void UpdateCharacterMovement(Vector2& characterPosition, Vector2& velocity, Rect
 
         Rectangle nextRect = { nextPosition.x, nextPosition.y, characterRect.width, characterRect.height };
 
-        // Prevent movement through obstacles
         if (!CheckCollisionRecs(nextRect, medTable) && !CheckCollisionRecs(nextRect, bed) &&
-            !CheckCollisionRecs(nextRect, computerArea)) {
+            !CheckCollisionRecs(nextRect, computerArea) && !CheckCollisionRecs(nextRect, computerLeft) && 
+            !CheckCollisionRecs(nextRect, topLeftTable) && !CheckCollisionRecs(nextRect, tvTable) &&
+            !CheckCollisionRecs(nextRect, drawer) && !CheckCollisionRecs(nextRect, drawer2) &&
+            !CheckCollisionRecs(nextRect, drawer3)) {
             if (nextRect.x >= screenBounds.x &&
                 nextRect.y >= screenBounds.y &&
                 nextRect.x + nextRect.width <= screenBounds.x + screenBounds.width &&

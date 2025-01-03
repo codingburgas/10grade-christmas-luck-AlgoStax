@@ -51,8 +51,16 @@ int main(void)
     int standingWidth = (int)(standingTexture.width * scale);
     int standingHeight = (int)(standingTexture.height * scale);
 
-    Rectangle medTable = { 470, 375, 95, 260 };
+    Rectangle medTable = { 480, 375, 85, 260 };
+    Rectangle tvTable = { 100, 375, 85, 215 };
+    Rectangle computerLeft = { 100, 700, 240, 60 };
     Rectangle bed = { 810, 160, 100, 250 };
+    Rectangle topLeftTable = { 100, 180, 235, 150 };
+    Rectangle computerArea = { 730, 700, 140, 60 };
+    Rectangle interractComputerArea = { 720, 700, 110, 80 };
+    Rectangle drawer = { 300, 180, 130, 60 };
+    Rectangle drawer2 = { 700, 180, 130, 60 };
+    Rectangle drawer3 = { 870, 450, 50, 70 };
     Color transparentColor = { 100, 0, 0, 0 };
 
     Rectangle characterRect = { characterPosition.x, characterPosition.y, (float)targetWidth, (float)targetHeight };
@@ -62,10 +70,6 @@ int main(void)
     float initialMoveSpeed = 50.0f;
 
     Rectangle screenBounds = { 90, 190, 840, 750 };
-
-
-    Rectangle computerArea = { 730, 700, 140, 60 };
-    Rectangle interractComputerArea = { 720, 700, 110, 80 };
     bool interactionScreenActive = false;
 
     SetTargetFPS(60);
@@ -81,7 +85,7 @@ int main(void)
         if (!interactionScreenActive)
         {
             UpdateCharacterMovement(characterPosition, velocity, characterRect,
-                medTable, bed, computerArea, screenBounds, frameTimer,
+                medTable, bed, computerArea, computerLeft, topLeftTable, tvTable, drawer, drawer2, drawer3, screenBounds, frameTimer,
                 currentFrame, isMoving, initialMoveNorth,
                 initialMoveDistance, initialMoveSpeed, deltaTime,
                 speed, frameSpeed, totalFrames);
