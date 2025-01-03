@@ -11,6 +11,7 @@ int main(void)
     Texture2D CardiovascularBackground = LoadTexture("../assets/backgrounds/Cardiovascular-system.png");
     Texture2D NerveBackground = LoadTexture("../assets/backgrounds/Nerve-system.png");
     Texture2D MuscularBackground = LoadTexture("../assets/backgrounds/Muscular-system.png");
+    Texture2D OrgansBackground = LoadTexture("../assets/backgrounds/Organs.png");
 
     Texture2D currentBackground = defaultBackground; 
 
@@ -144,8 +145,9 @@ int main(void)
             DrawText("2. Cardiovascular system", 400, 350, 30,WHITE);
             DrawText("3. Nervous system", 400, 400, 30, WHITE);
             DrawText("4. Muscular system", 400, 450, 30, WHITE);
-            DrawText("5. Reset Clinic", 400, 500, 30, WHITE);
-            DrawText("6. Exit Computer", 400, 550, 30, RED);
+            DrawText("5. Organs", 400, 500, 30, WHITE);
+            DrawText("6. Reset Clinic", 400, 550, 30, WHITE);
+            DrawText("7. Exit Computer", 400, 600, 30, RED);
 
             if (IsKeyDown(KEY_ONE))
             {
@@ -167,11 +169,16 @@ int main(void)
                 currentBackground = MuscularBackground;
             }
 
-            if (IsKeyDown(KEY_FIVE)) {
+            if (IsKeyDown(KEY_FIVE))
+            {
+                currentBackground = OrgansBackground;
+            }
+
+            if (IsKeyDown(KEY_SIX)) {
                 currentBackground = defaultBackground;
             }
 
-            if (IsKeyDown(KEY_SIX))
+            if (IsKeyDown(KEY_SEVEN))
             {
                 interactionScreenActive = false; 
             }
