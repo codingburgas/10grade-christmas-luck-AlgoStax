@@ -1,6 +1,8 @@
 ﻿  main.cpp
-C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(135,98): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(135,70): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(136,96): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(136,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(194,92): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(194,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Algostax.vcxproj -> C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\x64\Debug\Algostax.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

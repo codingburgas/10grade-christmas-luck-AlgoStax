@@ -52,6 +52,7 @@ int main(void)
     int standingHeight = (int)(standingTexture.height * scale);
 
     Rectangle medTable = { 480, 375, 85, 260 };
+    Rectangle medTableInterraction = { 475, 370, 95, 270 };
     Rectangle tvTable = { 100, 375, 85, 215 };
     Rectangle computerLeft = { 100, 700, 240, 60 };
     Rectangle bed = { 810, 160, 100, 250 };
@@ -132,7 +133,7 @@ int main(void)
 
             if (CheckCollisionRecs(characterRect, interractComputerArea))
             {
-                DrawText("Press E to interact", interractComputerArea.x, interractComputerArea.y - 20, 20, RED);
+                DrawText("Press E to interact", (float)characterRect.x, (float)characterRect.y - 20, 20, BLACK);
                 if (IsKeyDown(KEY_E))
                 {
                     interactionScreenActive = true;
@@ -185,6 +186,15 @@ int main(void)
             if (IsKeyDown(KEY_SEVEN))
             {
                 interactionScreenActive = false; 
+            }
+        }
+
+        if (CheckCollisionRecs(characterRect, medTableInterraction))
+        {
+            DrawText("Press E to interact", (float)characterRect.x, (float)characterRect.y - 20, 20, BLACK);
+            if (IsKeyDown(KEY_E))
+            {
+                interactionScreenActive = true;
             }
         }
 
