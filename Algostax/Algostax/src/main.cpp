@@ -6,6 +6,17 @@ int main(void)
     const int screenHeight = 1024;
     InitWindow(screenWidth, screenHeight, "Algostax");
 
+    // Your existing code for loading assets and initializing variables...
+
+    const char* dialogTexts[] = {
+        "Welcome to the clinic! Let's explore human anatomy.",
+        "Did you know? The human skeleton has 206 bones.",
+        "The cardiovascular system pumps blood through 60,000 miles of vessels.",
+        "Your brain contains over 86 billion neurons!",
+        "Muscles make up about 40% of your body weight.",
+        "Organs like the heart and lungs keep you alive every second."
+    };
+
     Texture2D defaultBackground = LoadTexture("../assets/backgrounds/clinic-background.png");
     Texture2D skeletonBackground = LoadTexture("../assets/backgrounds/Skeleton-on-table.png");
     Texture2D cardiovascularBackground = LoadTexture("../assets/backgrounds/Cardiovascular-system.png");
@@ -96,6 +107,11 @@ int main(void)
 
     int currentSystemIndex = 0;
 
+    int currentDialogIndex = 0;
+    bool showDialog = true;  
+    bool hasMoved = false;   
+
+    // Your existing game loop...
     SetTargetFPS(60);
 
     while (!WindowShouldClose())
@@ -113,6 +129,30 @@ int main(void)
                 currentFrame, isMoving, initialMoveNorth,
                 initialMoveDistance, initialMoveSpeed, deltaTime,
                 speed, frameSpeed, totalFrames);
+
+            
+            if (initialMoveNorth)
+            {
+                hasMoved = false; 
+            }
+            if (isMoving)
+            {
+                hasMoved = true;
+            }
+
+
+            
+            if (!hasMoved && showDialog)
+            {
+                if (IsKeyPressed(KEY_ENTER))
+                {
+                    currentDialogIndex = (currentDialogIndex + 1) % (sizeof(dialogTexts) / sizeof(dialogTexts[0]));
+                }
+            }
+            else
+            {
+                showDialog = false;  
+            }
         }
 
         BeginDrawing();
@@ -152,6 +192,13 @@ int main(void)
                 DrawTexturePro(standingTexture, Rectangle{ 0, 0, (float)standingTexture.width, (float)standingTexture.height },
                     Rectangle{ characterPosition.x, characterPosition.y, (float)standingWidth, (float)standingHeight },
                     Vector2{ 0.0f, 0.0f }, 0.0f, WHITE);
+
+                // Draw the mini dialog box at the bottom of the screen
+                if (showDialog && !hasMoved)
+                {
+                    DrawRectangle(50, screenHeight - 100, screenWidth - 100, 70, Fade(BLACK, 0.8f));
+                    DrawText(dialogTexts[currentDialogIndex], 70, screenHeight - 85, 20, WHITE);
+                }
             }
 
             if (CheckCollisionRecs(characterRect, interractComputerArea))
@@ -231,4 +278,6 @@ int main(void)
     }
 
     CloseWindow();
+
+    
 }
