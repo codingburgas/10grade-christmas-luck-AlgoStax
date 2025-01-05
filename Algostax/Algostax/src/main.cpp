@@ -2,11 +2,11 @@
 
 int main(void)
 {
-    const int screenWidth = 1200;
-    const int screenHeight = 617;
+    const int screenWidth = 1024;
+    const int screenHeight = 1024;
     InitWindow(screenWidth, screenHeight, "Algostax");
 
-    Texture2D defaultBackground = LoadTexture("../assets/backgrounds/chestInfo.png");
+    Texture2D defaultBackground = LoadTexture("../assets/backgrounds/clinic-background.png");
     Texture2D skeletonBackground = LoadTexture("../assets/backgrounds/Skeleton-on-table.png");
     Texture2D cardiovascularBackground = LoadTexture("../assets/backgrounds/Cardiovascular-system.png");
     Texture2D nerveBackground = LoadTexture("../assets/backgrounds/Nerve-system.png");
@@ -123,7 +123,7 @@ int main(void)
             DrawTexturePro(
                 currentBackground,
                 Rectangle{ 0, 0, (float)currentBackground.width, (float)currentBackground.height },
-                Rectangle{ 0, 0, 1200, 617 },
+                Rectangle{ 0, 0, 1024, 1024 },
                 Vector2{ 0.0f, 0.0f },
                 0.0f,
                 WHITE);
