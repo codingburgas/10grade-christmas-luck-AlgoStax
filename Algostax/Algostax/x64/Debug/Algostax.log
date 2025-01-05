@@ -1,6 +1,8 @@
 ﻿  main.cpp
-C:\Users\Lacho\OneDrive - ПГКПИ - Бургас\Работен плот\Dev-Folder-Projection\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(153,82): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Lacho\OneDrive - ПГКПИ - Бургас\Работен плот\Dev-Folder-Projection\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(153,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Lacho\OneDrive - ПГКПИ - Бургас\Работен плот\Dev-Folder-Projection\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(204,92): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Lacho\OneDrive - ПГКПИ - Бургас\Работен плот\Dev-Folder-Projection\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(204,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Algostax.vcxproj -> C:\Users\Lacho\OneDrive - ПГКПИ - Бургас\Работен плот\Dev-Folder-Projection\10grade-christmas-luck-AlgoStax\Algostax\x64\Debug\Algostax.exe
+C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(159,82): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(159,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(208,92): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(208,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Algostax.vcxproj -> C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\x64\Debug\Algostax.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

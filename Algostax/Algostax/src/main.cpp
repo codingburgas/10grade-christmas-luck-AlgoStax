@@ -2,16 +2,22 @@
 
 int main(void)
 {
-    const int screenWidth = 1024;
-    const int screenHeight = 1024;
+    const int screenWidth = 1200;
+    const int screenHeight = 617;
     InitWindow(screenWidth, screenHeight, "Algostax");
 
-    Texture2D defaultBackground = LoadTexture("../assets/backgrounds/clinic-background.png");
+    Texture2D defaultBackground = LoadTexture("../assets/backgrounds/chestInfo.png");
     Texture2D skeletonBackground = LoadTexture("../assets/backgrounds/Skeleton-on-table.png");
-    Texture2D CardiovascularBackground = LoadTexture("../assets/backgrounds/Cardiovascular-system.png");
-    Texture2D NerveBackground = LoadTexture("../assets/backgrounds/Nerve-system.png");
-    Texture2D MuscularBackground = LoadTexture("../assets/backgrounds/Muscular-system.png");
-    Texture2D OrgansBackground = LoadTexture("../assets/backgrounds/Organs.png");
+    Texture2D cardiovascularBackground = LoadTexture("../assets/backgrounds/Cardiovascular-system.png");
+    Texture2D nerveBackground = LoadTexture("../assets/backgrounds/Nerve-system.png");
+    Texture2D muscularBackground = LoadTexture("../assets/backgrounds/Muscular-system.png");
+    Texture2D organsBackground = LoadTexture("../assets/backgrounds/Organs.png");
+
+    Texture2D skeletonInfoScreen = LoadTexture("../assets/backgrounds/");
+    Texture2D cardiovascularInfoScreen = LoadTexture("../assets/backgrounds/");
+    Texture2D nervousInfoScreen = LoadTexture("../assets/backgrounds/");
+    Texture2D muscularInfoScreen = LoadTexture("../assets/backgrounds/");
+    Texture2D organInfoScreen = LoadTexture("../assets/backgrounds/");
 
     Texture2D currentBackground = defaultBackground;
 
@@ -75,10 +81,10 @@ int main(void)
 
     Texture2D systemTextures[5];
     systemTextures[0] = skeletonBackground;
-    systemTextures[1] = CardiovascularBackground;
-    systemTextures[2] = NerveBackground;
-    systemTextures[3] = MuscularBackground;
-    systemTextures[4] = OrgansBackground;
+    systemTextures[1] = cardiovascularBackground;
+    systemTextures[2] = nerveBackground;
+    systemTextures[3] = muscularBackground;
+    systemTextures[4] = organsBackground;
 
     const char* systemLabels[] = {
         "Skeletal system",
@@ -117,7 +123,7 @@ int main(void)
             DrawTexturePro(
                 currentBackground,
                 Rectangle{ 0, 0, (float)currentBackground.width, (float)currentBackground.height },
-                Rectangle{ 0, 0, 1024, 1024 },
+                Rectangle{ 0, 0, 1200, 617 },
                 Vector2{ 0.0f, 0.0f },
                 0.0f,
                 WHITE);
@@ -150,7 +156,7 @@ int main(void)
 
             if (CheckCollisionRecs(characterRect, interractComputerArea))
             {
-                DrawText("Press E to interact", characterRect.x, characterRect.y - 20, 20, RED);
+                DrawText("Press E to interact", characterRect.x, characterRect.y - 20, 20, BLACK);
                 if (IsKeyDown(KEY_E))
                 {
                     interactionScreenActive = true;
@@ -159,7 +165,6 @@ int main(void)
         }
         else
         {
-            // Draw the system background
             DrawTexturePro(
                 systemTextures[currentSystemIndex],
                 Rectangle{ 0, 0, (float)systemTextures[currentSystemIndex].width, (float)systemTextures[currentSystemIndex].height },
@@ -168,7 +173,6 @@ int main(void)
                 0.0f,
                 WHITE);
 
-            // Draw the menu controls
             DrawText("<", 50, screenHeight / 2 - 20, 40, WHITE);
             DrawText(">", screenWidth - 70, screenHeight / 2 - 20, 40, WHITE);
 
@@ -215,9 +219,9 @@ int main(void)
     UnloadTexture(defaultBackground);
     UnloadTexture(skeletonBackground);
     UnloadTexture(standingTexture);
-    UnloadTexture(CardiovascularBackground);
-    UnloadTexture(NerveBackground);
-    UnloadTexture(MuscularBackground);
+    UnloadTexture(cardiovascularBackground);
+    UnloadTexture(nerveBackground);
+    UnloadTexture(muscularBackground);
     for (int i = 0; i < 2; i++)
     {
         UnloadTexture(backFrames[i]);
