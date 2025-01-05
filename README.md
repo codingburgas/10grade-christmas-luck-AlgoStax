@@ -4,6 +4,7 @@
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/codingburgas/10grade-christmas-luck-AlgoStax?color=blue&style=flat-square">
 <img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed/codingburgas/10grade-christmas-luck-AlgoStax">
 </p>
+ <a href="https://upload.wikimedia.org/wikipedia/commons/f/f4/Raylib_logo.png" alt="Raylib" alt="Logo" width=250px /></a>
 <br>
 
 # 💻 About
