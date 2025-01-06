@@ -134,11 +134,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\characterWalk.h" />
+    <ClInclude Include="src\main.h" />
+    <ClInclude Include="src\muscularSystem.h" />
     <ClInclude Include="src\pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\characterWalk.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\muscularSystem.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

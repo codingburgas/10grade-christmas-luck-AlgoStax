@@ -6,18 +6,21 @@ int main(void)
     const int screenHeight = 1024;
     InitWindow(screenWidth, screenHeight, "Algostax");
 
+    const char* dialogTexts[] = {
+        "Welcome to the clinic! Let's explore human anatomy.",
+        "Did you know? The human skeleton has 206 bones.",
+        "The cardiovascular system pumps blood through 60,000 miles of vessels.",
+        "Your brain contains over 86 billion neurons!",
+        "Muscles make up about 40% of your body weight.",
+        "Organs like the heart and lungs keep you alive every second."
+    };
+
     Texture2D defaultBackground = LoadTexture("../assets/backgrounds/clinic-background.png");
-    Texture2D skeletonBackground = LoadTexture("../assets/backgrounds/Skeleton-on-table.png");
+    Texture2D skeletonBackground = LoadTexture("../assets/backgrounds/Skeletal-system.png");
     Texture2D cardiovascularBackground = LoadTexture("../assets/backgrounds/Cardiovascular-system.png");
     Texture2D nerveBackground = LoadTexture("../assets/backgrounds/Nerve-system.png");
     Texture2D muscularBackground = LoadTexture("../assets/backgrounds/Muscular-system.png");
     Texture2D organsBackground = LoadTexture("../assets/backgrounds/Organs.png");
-
-    Texture2D skeletonInfoScreen = LoadTexture("../assets/backgrounds/");
-    Texture2D cardiovascularInfoScreen = LoadTexture("../assets/backgrounds/");
-    Texture2D nervousInfoScreen = LoadTexture("../assets/backgrounds/");
-    Texture2D muscularInfoScreen = LoadTexture("../assets/backgrounds/");
-    Texture2D organInfoScreen = LoadTexture("../assets/backgrounds/");
 
     Texture2D currentBackground = defaultBackground;
 
@@ -94,6 +97,10 @@ int main(void)
         "Organs"
     };
 
+    int currentDialogIndex = 0;
+    bool showDialog = true;
+    bool hasMoved = false;
+
     int currentSystemIndex = 0;
 
     SetTargetFPS(60);
@@ -113,6 +120,27 @@ int main(void)
                 currentFrame, isMoving, initialMoveNorth,
                 initialMoveDistance, initialMoveSpeed, deltaTime,
                 speed, frameSpeed, totalFrames);
+
+                if (initialMoveNorth)
+                {
+                    hasMoved = false;
+                }
+                if (isMoving)
+                {
+                    hasMoved = true;
+                }
+
+                if (!hasMoved && showDialog)
+                {
+                    if (IsKeyPressed(KEY_ENTER))
+                    {
+                        currentDialogIndex = (currentDialogIndex + 1) % (sizeof(dialogTexts) / sizeof(dialogTexts[0]));
+                    }
+                }
+                else
+                {
+                    showDialog = false;
+                }
         }
 
         BeginDrawing();
@@ -152,6 +180,12 @@ int main(void)
                 DrawTexturePro(standingTexture, Rectangle{ 0, 0, (float)standingTexture.width, (float)standingTexture.height },
                     Rectangle{ characterPosition.x, characterPosition.y, (float)standingWidth, (float)standingHeight },
                     Vector2{ 0.0f, 0.0f }, 0.0f, WHITE);
+
+                if (showDialog && !hasMoved)
+                {
+                    DrawRectangle(50, screenHeight - 100, screenWidth - 100, 70, Fade(BLACK, 0.8f));
+                    DrawText(dialogTexts[currentDialogIndex], 70, screenHeight - 85, 20, WHITE);
+                }
             }
 
             if (CheckCollisionRecs(characterRect, interractComputerArea))
@@ -205,16 +239,18 @@ int main(void)
         }
         if (CheckCollisionRecs(characterRect, medTableInterraction))
         {
-            DrawText("Press E to interact", (float)characterRect.x, (float)characterRect.y - 20, 20, BLACK);
-            if (IsKeyDown(KEY_E))
+            if(currentBackground.id == muscularBackground.id)
             {
-                interactionScreenActive = true;
+                DrawText("Press E to interact", (float)characterRect.x, (float)characterRect.y - 20, 20, BLACK);
+            }
+            if (IsKeyDown(KEY_E)) {
+                muscularSystem();
             }
         }
 
         EndDrawing();
     }
-
+    
 
     UnloadTexture(defaultBackground);
     UnloadTexture(skeletonBackground);
