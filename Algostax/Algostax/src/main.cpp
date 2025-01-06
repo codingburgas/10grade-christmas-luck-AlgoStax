@@ -97,11 +97,11 @@ int main(void)
         "Organs"
     };
 
-    int currentDialogIndex = 0;
-    bool showDialog = true;
-    bool hasMoved = false;
-
     int currentSystemIndex = 0;
+
+    int currentDialogIndex = 0;
+    bool showDialog = true;  
+    bool hasMoved = false;   
 
     SetTargetFPS(60);
 
@@ -141,6 +141,29 @@ int main(void)
                 {
                     showDialog = false;
                 }
+            
+            if (initialMoveNorth)
+            {
+                hasMoved = false; 
+            }
+            if (isMoving)
+            {
+                hasMoved = true;
+            }
+
+
+            
+            if (!hasMoved && showDialog)
+            {
+                if (IsKeyPressed(KEY_ENTER))
+                {
+                    currentDialogIndex = (currentDialogIndex + 1) % (sizeof(dialogTexts) / sizeof(dialogTexts[0]));
+                }
+            }
+            else
+            {
+                showDialog = false;  
+            }
         }
 
         BeginDrawing();
