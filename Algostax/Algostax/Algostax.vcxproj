@@ -137,11 +137,13 @@
     <ClInclude Include="src\main.h" />
     <ClInclude Include="src\muscularSystem.h" />
     <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\skeletalSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\characterWalk.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\muscularSystem.cpp" />
+    <ClCompile Include="src\skeletalSystem.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -4,4 +4,5 @@
 #include "raylib.h"
 #include "characterWalk.h"
 #include "muscularSystem.h"
+#include "skeletalSystem.h"
 #include "main.h"

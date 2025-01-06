@@ -30,6 +30,16 @@ int muscularSystem(void)
     
     Rectangle legs1 = { 240, 310, 110, 20 };
     Rectangle legs2 = { 240, 350, 110, 20 };
+    Rectangle legs3 = { 200, 390, 130, 20 };
+    Rectangle legs4 = { 200, 430, 130, 20 };
+    Rectangle legs5 = { 200, 455, 130, 20 };
+    Rectangle legs6 = { 210, 490, 130, 20 };
+    Rectangle legs7 = { 680, 320, 110, 20 };
+    Rectangle legs8 = { 670, 345, 160, 20 };
+    Rectangle legs9 = { 670, 370, 80, 20 };
+    Rectangle legs10 = { 670, 400, 120, 20 };
+    Rectangle legs11 = { 650, 450, 100, 50 };
+    Rectangle legs12 = { 330, 535, 130, 20 };
 
     bool isArms = false;
     bool isChest = false;
@@ -53,18 +63,6 @@ int muscularSystem(void)
             WHITE);
 
         Vector2 mousePosition = GetMousePosition();
-
-        DrawRectangleRec(arms1, WHITE);
-        DrawRectangleRec(arms2, WHITE);
-        DrawRectangleRec(arms3, WHITE);
-        DrawRectangleRec(arms4, WHITE);
-        DrawRectangleRec(arms5, WHITE);
-        DrawRectangleRec(arms6, WHITE);
-        DrawRectangleRec(chest, WHITE);
-        DrawRectangleRec(abs1, WHITE);
-        DrawRectangleRec(abs2, WHITE);
-        DrawRectangleRec(legs1, WHITE);
-        DrawRectangleRec(legs2, WHITE);
 
         if (CheckCollisionPointRec(mousePosition, arms1) || CheckCollisionPointRec(mousePosition, arms2) || CheckCollisionPointRec(mousePosition, arms3) || 
             CheckCollisionPointRec(mousePosition, arms4) || CheckCollisionPointRec(mousePosition, arms5) || CheckCollisionPointRec(mousePosition, arms6))
@@ -93,7 +91,12 @@ int muscularSystem(void)
             }
         }
 
-        else if (CheckCollisionPointRec(mousePosition, legs1) || CheckCollisionPointRec(mousePosition, legs2))
+        else if (CheckCollisionPointRec(mousePosition, legs1) || CheckCollisionPointRec(mousePosition, legs2) ||
+             CheckCollisionPointRec(mousePosition, legs3) || CheckCollisionPointRec(mousePosition, legs4) || 
+            CheckCollisionPointRec(mousePosition, legs5) || CheckCollisionPointRec(mousePosition, legs6) || 
+            CheckCollisionPointRec(mousePosition, legs7) || CheckCollisionPointRec(mousePosition, legs8) || 
+            CheckCollisionPointRec(mousePosition, legs9) || CheckCollisionPointRec(mousePosition, legs10) || 
+            CheckCollisionPointRec(mousePosition, legs11) || CheckCollisionPointRec(mousePosition, legs12))
         {
             SetMouseCursor(MOUSE_CURSOR_POINTING_HAND);
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))

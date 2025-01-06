@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "main.h"
 
 int main(void)
 {
@@ -150,20 +150,6 @@ int main(void)
             {
                 hasMoved = true;
             }
-
-
-            
-            if (!hasMoved && showDialog)
-            {
-                if (IsKeyPressed(KEY_ENTER))
-                {
-                    currentDialogIndex = (currentDialogIndex + 1) % (sizeof(dialogTexts) / sizeof(dialogTexts[0]));
-                }
-            }
-            else
-            {
-                showDialog = false;  
-            }
         }
 
         BeginDrawing();
@@ -265,9 +251,20 @@ int main(void)
             if(currentBackground.id == muscularBackground.id)
             {
                 DrawText("Press E to interact", (float)characterRect.x, (float)characterRect.y - 20, 20, BLACK);
+                if (IsKeyDown(KEY_E)) {
+                    muscularSystem();
+                }
             }
-            if (IsKeyDown(KEY_E)) {
-                muscularSystem();
+        }
+
+        if (CheckCollisionRecs(characterRect, medTableInterraction))
+        {
+            if (currentBackground.id == skeletonBackground.id)
+            {
+                DrawText("Press E to interact", (float)characterRect.x, (float)characterRect.y - 20, 20, BLACK);
+                if (IsKeyDown(KEY_E)) {
+                    skeletalSystem();
+                }
             }
         }
 
