@@ -149,5 +149,11 @@ int muscularSystem(void)
    
     CloseWindow();
 
+    UnloadTexture(muscularInfoScreen);
+    UnloadTexture(absInfoScreen);
+    UnloadTexture(chestInfoScreen);
+    UnloadTexture(armsInfoScreen);
+    UnloadTexture(legsInfoScreen);
+
     return 0;
 }
