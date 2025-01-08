@@ -1,4 +1,5 @@
 #include "organSystem.h"
+#include <iostream>
 
 int organSystem(void)
 {
@@ -12,25 +13,52 @@ int organSystem(void)
     Texture2D brainInfoScreen = LoadTexture("../assets/backgrounds/brainInfo.png");
     Texture2D heartInfoScreen = LoadTexture("../assets/backgrounds/heartInfo.png");
     Texture2D stomachInfoScreen = LoadTexture("../assets/backgrounds/stomachInfo.png");
+    Texture2D colonInfoScreen = LoadTexture("../assets/backgrounds/colon.png");
+    Texture2D smallIntestineInfoScreen = LoadTexture("../assets/backgrounds/smallIntestine.png");
 
     Texture2D currentBackground = organInfoScreen;
+
+    const char* facts[] = {
+        "Brain: Your brain generates enough power to light a bulb!",
+        "Kidneys: Kidneys filter 50 gallons of blood daily!",
+        "Stomach: Your stomach acid can dissolve metal!",
+        "Heart and Lungs: Your heart beats over 100,000 times daily!",
+        "Liver: Your liver can regenerate itself after damage!",
+        "Small Intestine: Small intestines are 20 feet long—hardly small!"
+    };
 
     Rectangle liver = { 320, 220, 60, 20 };
     Rectangle heart = { 320, 190, 70, 20 };
     Rectangle lungs = { 700, 150, 70, 20 };
     Rectangle brain = { 645, 50, 70, 20 };
-    Rectangle stomach = { 700, 250, 80, 20 };
+    Rectangle stomach = { 710, 200, 80, 20 };
+    Rectangle intestine = { 720, 275, 120, 20 };
+    Rectangle colon = { 700, 250, 80, 20 };
   
 
     bool isLiver = false;
     bool isBrain = false;
     bool isStomach = false;
     bool isHeart = false;
+    bool isColon = false;
+    bool isIntestine = false;
 
+    int currentDialogIndex = 0;
+    bool showDialog = true;
+    bool stop = true;
+    int counter = 0;
     SetTargetFPS(60);
 
     while (!WindowShouldClose())
     {
+        if (showDialog)
+        {
+            if (IsKeyPressed(KEY_D))
+            {
+                currentDialogIndex = (currentDialogIndex + 1) % (sizeof(facts) / sizeof(facts[0]));
+            }
+        }        
+
         BeginDrawing();
 
         ClearBackground(RAYWHITE);
@@ -45,6 +73,16 @@ int organSystem(void)
 
         Vector2 mousePosition = GetMousePosition();
 
+        if (counter < 6)
+        {
+            if (showDialog)
+            {
+                DrawRectangle(130, screenHeight - 100, screenWidth - 250, 70, Fade(BLACK, 0.8f));
+                DrawText(facts[currentDialogIndex], 140, screenHeight - 85, 20, WHITE);
+                counter++;
+            }
+        }
+
         if (CheckCollisionPointRec(mousePosition, liver))
         {
             SetMouseCursor(MOUSE_CURSOR_POINTING_HAND);
@@ -52,7 +90,7 @@ int organSystem(void)
             {
                 isLiver = true;
             }
-        }
+         }
 
         else if (CheckCollisionPointRec(mousePosition, brain))
         {
@@ -72,13 +110,29 @@ int organSystem(void)
         }
 
         else if (CheckCollisionPointRec(mousePosition, heart) || CheckCollisionPointRec(mousePosition, lungs))
-
-
         {
             SetMouseCursor(MOUSE_CURSOR_POINTING_HAND);
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
             {
                 isHeart = true;
+            }
+        }
+
+        else if (CheckCollisionPointRec(mousePosition, intestine))
+        {
+            SetMouseCursor(MOUSE_CURSOR_POINTING_HAND);
+            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+            {
+                isIntestine = true;
+            }
+        }
+
+        else if (CheckCollisionPointRec(mousePosition, colon))
+        {
+            SetMouseCursor(MOUSE_CURSOR_POINTING_HAND);
+            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+            {
+                isColon = true;
             }
         }
 
@@ -110,6 +164,18 @@ int organSystem(void)
             isHeart = false;
         }
 
+        if (isColon == true)
+        {
+            currentBackground = colonInfoScreen;
+            isColon = false;
+        }
+
+        if (isIntestine == true)
+        {
+            currentBackground = smallIntestineInfoScreen;
+            isIntestine = false;
+        }
+
         if (IsKeyPressed(KEY_SPACE))
         {
             currentBackground = organInfoScreen;
@@ -128,6 +194,8 @@ int organSystem(void)
     UnloadTexture(liverInfoScreen);
     UnloadTexture(stomachInfoScreen);
     UnloadTexture(heartInfoScreen);
+    UnloadTexture(colonInfoScreen);
+    UnloadTexture(smallIntestineInfoScreen);
 
     CloseWindow();
 

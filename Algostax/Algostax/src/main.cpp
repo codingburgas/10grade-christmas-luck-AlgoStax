@@ -279,6 +279,17 @@ int main(void)
             }
         }
 
+        if (CheckCollisionRecs(characterRect, medTableInterraction))
+        {
+            if (currentBackground.id == cardiovascularBackground.id)
+            {
+                DrawText("Press E to interact", (float)characterRect.x, (float)characterRect.y - 20, 20, BLACK);
+                if (IsKeyDown(KEY_E)) {
+                    cardiovascularSystem();
+                }
+            }
+        }
+
         EndDrawing();
     }
     
