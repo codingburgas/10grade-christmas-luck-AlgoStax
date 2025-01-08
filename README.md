@@ -1,14 +1,29 @@
-<h1 align="center">✏Team AlgoStax</h1>
+<h1 align="center">🧠Team AlgoStax</h1>
 <p align="center">
-<img alt="GitHub repo status" src="https://img.shields.io/badge/status-active-green">
+
+ <a href="file:///D:/New%20folder%20(4)/logo1-Photoroom.png" alt="Logo_AlgoStax" alt="Logo" width=250px /></a>
+<br>
+
+<h2 align="center">🧬 An educational biology application</h2>
+</br>
+
+<div align="center"> 
+    <p>🧸 All ages app</p>
+    <p>📚 Innovative educational approach</p>
+    <p>💡 Fun fact AlgoStax has had </p>
+      <img align="center" src="https://api.visitorbadge.io/api/visitors?path=/codingburgas/10grade-christmas-luck-AlgoStax&label=Visitors&labelColor=9FCEE5&countColor=9FCEE5&labelStyle=upper">
+</br>
+ </br>
+ <img alt="GitHub repo status" src="https://img.shields.io/badge/status-active-green">
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/codingburgas/10grade-christmas-luck-AlgoStax?color=blue&style=flat-square">
 <img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed/codingburgas/10grade-christmas-luck-AlgoStax">
 </p>
- <a href="https://upload.wikimedia.org/wikipedia/commons/f/f4/Raylib_logo.png" alt="Raylib" alt="Logo" width=250px /></a>
-<br>
+</div>
+
+
 
 # 💻 About
-### AlgoStax is a 2D pixel-art game designed to explore human anatomy interactively. Dive deep into the details of the human body while engaging in educational and entertaining gameplay. Built with C++ and powered by the Raylib library, AlgoStax features engaging visuals and user-friendly mechanics, making learning both fun and educational.
+## AlgoStax is  2D pixel-art game designed as an interactive biology app to explore human anatomy. Suitable for all ages, it offers an engaging and educational experience, allowing users to dive deep into the details of the human body while having fun. Built with C++ and powered by the Raylib library, AlgoStax features simple controls and a visually appealing design, making the exploration of anatomy both enjoyable and accessible. 
 
 
 
@@ -19,27 +34,32 @@
 
 <br>
 
-# 🗂️ Core Tech Stack
+# 🏅 Application
+###  Our application doesn't have a release yet so you will need to download and run it manually.
+###  First we clone the repository 
+<pre>git clone https://github.com/codingburgas/10grade-christmas-luck-AlgoStax.git</pre>
+### After that we open AlgoStax.sln and we run it.
 
-## ⬜ Used code editors & collaborative services:
+
+# 🌐 Used code editors & collaborative services:
 
 <p align="left" gap="10px">
    <a href="https://upload.wikimedia.org/wikipedia/commons/f/f4/Raylib_logo.png" alt="Raylib" width=70px /></a>
 </p>
 
-## ⬜ Used tools for the visual elements:
+# 🎨 Used tools for the visual elements:
 
 <p align="left" gap="10px">
   <a href="https://www.figma.com/"><img src="https://img.icons8.com/color/344/figma--v1.png" alt="Figma logo" width=70px/></a>
   <a href="https://upload.wikimedia.org/wikipedia/commons/f/f4/Raylib_logo.png" alt="Raylib" width=70px /></a>
 </p>
 
-## ⬜ Used technologies for development:
+# 💻 Used technologies for development:
 <p align="left gap="10px">
     <a href="https://cplusplus.com/"><img width=70px src="https://img.icons8.com/fluency/48/c-plus-plus-logo.png" alt="c-plus-plus-logo"/></a>
 </p>
 
-## ⬜ Used tools for our documentation, presentation & communication:
+# 📑Used tools for our documentation, presentation & communication:
 <p align="left">
 <a href="https://www.microsoft.com/en/microsoft-teams/group-chat-software"><img src="https://img.icons8.com/fluency/48/microsoft-teams-2019.png" alt = "MS Teams logo" width=70px /></a>
 <a href="https://www.microsoft.com/en-ww/microsoft-365/word"><img src="https://img.icons8.com/color/48/microsoft-word-2019--v2.png" alt="MS Word logo" width=70px /></a>
