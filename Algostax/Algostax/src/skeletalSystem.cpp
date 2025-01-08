@@ -15,6 +15,15 @@ int skeletalSystem(void)
 
     Texture2D currentBackground = skeletalInfoScreen;
 
+    const char* facts[] = {
+        "Brain: Your brain generates enough power to light a bulb!",
+        "Kidneys: Kidneys filter 50 gallons of blood daily!",
+        "Stomach: Your stomach acid can dissolve metal!",
+        "Heart and Lungs: Your heart beats over 100,000 times daily!",
+        "Liver: Your liver can regenerate itself after damage!",
+        "Small Intestine: Small intestines are 20 feet long—hardly small!"
+    };
+
     Rectangle arms1 = { 230, 135, 120, 20 };
     Rectangle arms2 = { 720, 140, 130, 20 };
     Rectangle arms3 = { 700, 170, 130, 20 };
@@ -47,10 +56,27 @@ int skeletalSystem(void)
     bool isPelvic = false;
     bool isLegs = false;
 
+    int currentDialogIndex = 0;
+    bool showDialog = true;
+
     SetTargetFPS(60);
 
     while (!WindowShouldClose())
     {
+        if (showDialog)
+        {
+            if (IsKeyPressed(KEY_D))
+            {
+                currentDialogIndex++;
+            }
+        }
+
+        if (currentDialogIndex >= (sizeof(facts) / sizeof(facts[0])))
+        {
+            showDialog = false;
+        }
+
+
         BeginDrawing();
 
         ClearBackground(RAYWHITE);
@@ -64,6 +90,18 @@ int skeletalSystem(void)
             WHITE);
 
         Vector2 mousePosition = GetMousePosition();
+
+        if (showDialog && currentDialogIndex < (sizeof(facts) / sizeof(facts[0])))
+        {
+            DrawRectangle(130, screenHeight - 100, screenWidth - 250, 70, Fade(BLACK, 0.8f));
+            DrawText(facts[currentDialogIndex], 140, screenHeight - 85, 20, WHITE);
+        }
+
+        if (showDialog && currentDialogIndex < (sizeof(facts) / sizeof(facts[0])))
+        {
+            DrawRectangle(130, screenHeight - 100, screenWidth - 250, 70, Fade(BLACK, 0.8f));
+            DrawText(facts[currentDialogIndex], 140, screenHeight - 85, 20, WHITE);
+        }
 
         if (CheckCollisionPointRec(mousePosition, arms1) || CheckCollisionPointRec(mousePosition, arms3) || CheckCollisionPointRec(mousePosition, arms4) ||
             CheckCollisionPointRec(mousePosition, arms5) || CheckCollisionPointRec(mousePosition, arms6) ||  CheckCollisionPointRec(mousePosition, legs5)||

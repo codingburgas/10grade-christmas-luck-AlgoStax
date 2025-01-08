@@ -1,22 +1,9 @@
 ﻿  cardiovascularSystem.cpp
+  muscularSystem.cpp
   nerveSystem.cpp
   organSystem.cpp
-  characterWalk.cpp
-  main.cpp
-  muscularSystem.cpp
-C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(202,82): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(202,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(253,96): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(253,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(264,96): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(264,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(275,96): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(275,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(286,96): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\Algostax\src\main.cpp(286,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   skeletalSystem.cpp
   Generating Code...
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Algostax.vcxproj -> C:\Users\simeo\Documents\school projects\10grade-christmas-luck-AlgoStax\Algostax\x64\Debug\Algostax.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

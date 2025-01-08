@@ -34,7 +34,7 @@ int organSystem(void)
     Rectangle stomach = { 710, 200, 80, 20 };
     Rectangle intestine = { 720, 275, 120, 20 };
     Rectangle colon = { 700, 250, 80, 20 };
-  
+
 
     bool isLiver = false;
     bool isBrain = false;
@@ -45,8 +45,7 @@ int organSystem(void)
 
     int currentDialogIndex = 0;
     bool showDialog = true;
-    bool stop = true;
-    int counter = 0;
+
     SetTargetFPS(60);
 
     while (!WindowShouldClose())
@@ -55,9 +54,14 @@ int organSystem(void)
         {
             if (IsKeyPressed(KEY_D))
             {
-                currentDialogIndex = (currentDialogIndex + 1) % (sizeof(facts) / sizeof(facts[0]));
+                currentDialogIndex++;
             }
-        }        
+        }
+
+        if (currentDialogIndex >= (sizeof(facts) / sizeof(facts[0])))
+        {
+            showDialog = false; 
+        }
 
         BeginDrawing();
 
@@ -69,19 +73,16 @@ int organSystem(void)
             Rectangle{ 0, 0, 1100, 620 },
             Vector2{ 0.0f, 0.0f },
             0.0f,
-            WHITE);     
+            WHITE);
 
         Vector2 mousePosition = GetMousePosition();
 
-        if (counter < 6)
+        if (showDialog && currentDialogIndex < (sizeof(facts) / sizeof(facts[0])))
         {
-            if (showDialog)
-            {
-                DrawRectangle(130, screenHeight - 100, screenWidth - 250, 70, Fade(BLACK, 0.8f));
-                DrawText(facts[currentDialogIndex], 140, screenHeight - 85, 20, WHITE);
-                counter++;
-            }
+            DrawRectangle(130, screenHeight - 100, screenWidth - 250, 70, Fade(BLACK, 0.8f));
+            DrawText(facts[currentDialogIndex], 140, screenHeight - 85, 20, WHITE);
         }
+
 
         if (CheckCollisionPointRec(mousePosition, liver))
         {
@@ -90,7 +91,7 @@ int organSystem(void)
             {
                 isLiver = true;
             }
-         }
+        }
 
         else if (CheckCollisionPointRec(mousePosition, brain))
         {

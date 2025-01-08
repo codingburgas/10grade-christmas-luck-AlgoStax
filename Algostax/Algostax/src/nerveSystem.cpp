@@ -15,12 +15,22 @@ int nerveSystem(void)
 
     Texture2D currentBackground = nerveInfoScreen;
 
+    const char* facts[] = {
+        "Brain: Your brain generates enough power to light a bulb!",
+        "Kidneys: Kidneys filter 50 gallons of blood daily!",
+        "Stomach: Your stomach acid can dissolve metal!",
+        "Heart and Lungs: Your heart beats over 100,000 times daily!",
+        "Liver: Your liver can regenerate itself after damage!",
+        "Small Intestine: Small intestines are 20 feet long—hardly small!"
+    };
+
     Rectangle neuron = { 650, 120, 120, 20 };
     Rectangle eye = { 520, 90, 70, 20 };
     Rectangle spinal = { 345, 130, 70, 20 };
     Rectangle brain = { 345, 100, 70, 20 };
 
-  
+    int currentDialogIndex = 0;
+    bool showDialog = true;
 
     bool isNeuron = false;
     bool isBrain = false;
@@ -31,6 +41,19 @@ int nerveSystem(void)
 
     while (!WindowShouldClose())
     {
+        if (showDialog)
+        {
+            if (IsKeyPressed(KEY_D))
+            {
+                currentDialogIndex++;
+            }
+        }
+
+        if (currentDialogIndex >= (sizeof(facts) / sizeof(facts[0])))
+        {
+            showDialog = false;
+        }
+
         BeginDrawing();
 
         ClearBackground(RAYWHITE);
@@ -43,9 +66,13 @@ int nerveSystem(void)
             0.0f,
             WHITE);
 
-        
-
         Vector2 mousePosition = GetMousePosition();
+
+        if (showDialog && currentDialogIndex < (sizeof(facts) / sizeof(facts[0])))
+        {
+            DrawRectangle(130, screenHeight - 100, screenWidth - 250, 70, Fade(BLACK, 0.8f));
+            DrawText(facts[currentDialogIndex], 140, screenHeight - 85, 20, WHITE);
+        }
 
         if (CheckCollisionPointRec(mousePosition, neuron))
         {

@@ -19,6 +19,15 @@ int cardiovascularSystem(void)
 
     Texture2D currentBackground = organInfoScreen;
 
+    const char* facts[] = {
+        "Brain: Your brain generates enough power to light a bulb!",
+        "Kidneys: Kidneys filter 50 gallons of blood daily!",
+        "Stomach: Your stomach acid can dissolve metal!",
+        "Heart and Lungs: Your heart beats over 100,000 times daily!",
+        "Liver: Your liver can regenerate itself after damage!",
+        "Small Intestine: Small intestines are 20 feet long—hardly small!"
+    };
+
     Rectangle liver = { 320, 220, 60, 20 };
     Rectangle heart = { 320, 190, 70, 20 };
     Rectangle lungs = { 700, 150, 70, 20 };
@@ -35,10 +44,27 @@ int cardiovascularSystem(void)
     bool isColon = false;
     bool isIntestine = false;
 
+    int currentDialogIndex = 0;
+    bool showDialog = true;
+
     SetTargetFPS(60);
 
     while (!WindowShouldClose())
     {
+        if (showDialog)
+        {
+            if (IsKeyPressed(KEY_D))
+            {
+                currentDialogIndex++;
+            }
+        }
+
+        if (currentDialogIndex >= (sizeof(facts) / sizeof(facts[0])))
+        {
+            showDialog = false;
+        }
+
+
         BeginDrawing();
 
         ClearBackground(RAYWHITE);
@@ -52,6 +78,12 @@ int cardiovascularSystem(void)
             WHITE);
 
         Vector2 mousePosition = GetMousePosition();
+
+        if (showDialog && currentDialogIndex < (sizeof(facts) / sizeof(facts[0])))
+        {
+            DrawRectangle(130, screenHeight - 100, screenWidth - 250, 70, Fade(BLACK, 0.8f));
+            DrawText(facts[currentDialogIndex], 140, screenHeight - 85, 20, WHITE);
+        }
 
         if (CheckCollisionPointRec(mousePosition, liver))
         {
