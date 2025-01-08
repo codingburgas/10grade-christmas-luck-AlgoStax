@@ -124,6 +124,11 @@ int organSystem(void)
         EndDrawing();
     }
 
+    UnloadTexture(brainInfoScreen);
+    UnloadTexture(liverInfoScreen);
+    UnloadTexture(stomachInfoScreen);
+    UnloadTexture(heartInfoScreen);
+
     CloseWindow();
 
     return 0;

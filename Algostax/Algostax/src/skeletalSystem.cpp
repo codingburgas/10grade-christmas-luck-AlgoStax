@@ -156,5 +156,11 @@ int skeletalSystem(void)
 
     CloseWindow();
 
+    UnloadTexture(skeletalInfoScreen);
+    UnloadTexture(absInfoScreen);
+    UnloadTexture(chestInfoScreen);
+    UnloadTexture(armsInfoScreen);
+    UnloadTexture(legsInfoScreen);
+
     return 0;
 }
