@@ -7,17 +7,16 @@ int cardiovascularSystem(void)
     const int screenWidth = 1100;
     const int screenHeight = 620;
 
-    InitWindow(screenWidth, screenHeight, "Organ System");
+    InitWindow(screenWidth, screenHeight, "Cardiovascular System");
 
-    Texture2D organInfoScreen = LoadTexture("../assets/backgrounds/organsSystemInfo.png");
-    Texture2D liverInfoScreen = LoadTexture("../assets/backgrounds/liverInfo.png");
-    Texture2D brainInfoScreen = LoadTexture("../assets/backgrounds/brainInfo.png");
-    Texture2D heartInfoScreen = LoadTexture("../assets/backgrounds/heartInfo.png");
-    Texture2D stomachInfoScreen = LoadTexture("../assets/backgrounds/stomachInfo.png");
-    Texture2D colonInfoScreen = LoadTexture("../assets/backgrounds/colon.png");
-    Texture2D smallIntestineInfoScreen = LoadTexture("../assets/backgrounds/smallIntestine.png");
+    Texture2D cardiovascularInfoScreen = LoadTexture("../assets/backgrounds/cardiovascularSystem.png");
+    Texture2D kidneyInfoScreen = LoadTexture("../assets/backgrounds/kidneyInfo.png");
+    Texture2D capillariesInfoScreen = LoadTexture("../assets/backgrounds/capillariesInfo.png");
+    Texture2D heartInfoScreen = LoadTexture("../assets/backgrounds/cardiovascularHeartInfo.png");
+    Texture2D veinsInfoScreen = LoadTexture("../assets/backgrounds/veinsInfo.png");
+    
 
-    Texture2D currentBackground = organInfoScreen;
+    Texture2D currentBackground = cardiovascularInfoScreen;
 
     const char* facts[] = {
         "Brain: Your brain generates enough power to light a bulb!",
@@ -28,21 +27,18 @@ int cardiovascularSystem(void)
         "Small Intestine: Small intestines are 20 feet long—hardly small!"
     };
 
-    Rectangle liver = { 320, 220, 60, 20 };
-    Rectangle heart = { 320, 190, 70, 20 };
-    Rectangle lungs = { 700, 150, 70, 20 };
-    Rectangle brain = { 645, 50, 70, 20 };
-    Rectangle stomach = { 710, 200, 80, 20 };
-    Rectangle intestine = { 720, 275, 120, 20 };
-    Rectangle colon = { 700, 250, 80, 20 };
+    Rectangle kidney = { 510, 320, 60, 20 };
+    Rectangle capillaries = { 280, 385, 170, 20 };
+    Rectangle heart = { 620, 230, 270, 20 };
+    Rectangle veins = { 620, 190, 270, 20 };
+    
 
 
-    bool isLiver = false;
-    bool isBrain = false;
-    bool isStomach = false;
+    bool isKidney = false;
+    bool isCapillaries = false;
     bool isHeart = false;
-    bool isColon = false;
-    bool isIntestine = false;
+    bool isVeins = false;
+    
 
     int currentDialogIndex = 0;
     bool showDialog = true;
@@ -85,33 +81,24 @@ int cardiovascularSystem(void)
             DrawText(facts[currentDialogIndex], 140, screenHeight - 85, 20, WHITE);
         }
 
-        if (CheckCollisionPointRec(mousePosition, liver))
+        if (CheckCollisionPointRec(mousePosition, kidney))
         {
             SetMouseCursor(MOUSE_CURSOR_POINTING_HAND);
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
             {
-                isLiver = true;
+                isKidney = true;
             }
         }
 
-        else if (CheckCollisionPointRec(mousePosition, brain))
+        else if (CheckCollisionPointRec(mousePosition, capillaries))
         {
             SetMouseCursor(MOUSE_CURSOR_POINTING_HAND);
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
             {
-                isBrain = true;
+                isCapillaries = true;
             }
         }
-        else if (CheckCollisionPointRec(mousePosition, stomach))
-        {
-            SetMouseCursor(MOUSE_CURSOR_POINTING_HAND);
-            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
-            {
-                isStomach = true;
-            }
-        }
-
-        else if (CheckCollisionPointRec(mousePosition, heart) || CheckCollisionPointRec(mousePosition, lungs))
+        else if (CheckCollisionPointRec(mousePosition, heart))
         {
             SetMouseCursor(MOUSE_CURSOR_POINTING_HAND);
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
@@ -120,44 +107,31 @@ int cardiovascularSystem(void)
             }
         }
 
-        else if (CheckCollisionPointRec(mousePosition, intestine))
+        else if (CheckCollisionPointRec(mousePosition, heart) || CheckCollisionPointRec(mousePosition, veins))
         {
             SetMouseCursor(MOUSE_CURSOR_POINTING_HAND);
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
             {
-                isIntestine = true;
+                isVeins = true;
             }
         }
 
-        else if (CheckCollisionPointRec(mousePosition, colon))
-        {
-            SetMouseCursor(MOUSE_CURSOR_POINTING_HAND);
-            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
-            {
-                isColon = true;
-            }
-        }
+        
 
         else {
             SetMouseCursor(MOUSE_CURSOR_DEFAULT);
         }
 
-        if (isLiver == true)
+        if (isKidney == true)
         {
-            currentBackground = liverInfoScreen;
-            isLiver = false;
+            currentBackground = kidneyInfoScreen;
+            isKidney = false;
         }
 
-        if (isBrain == true)
+        if (isCapillaries == true)
         {
-            currentBackground = brainInfoScreen;
-            isBrain = false;
-        }
-
-        if (isStomach == true)
-        {
-            currentBackground = stomachInfoScreen;
-            isStomach = false;
+            currentBackground = capillariesInfoScreen;
+            isCapillaries = false;
         }
 
         if (isHeart == true)
@@ -166,21 +140,17 @@ int cardiovascularSystem(void)
             isHeart = false;
         }
 
-        if (isColon == true)
+
+        if (isVeins == true)
         {
-            currentBackground = colonInfoScreen;
-            isColon = false;
+            currentBackground = veinsInfoScreen;
+            isVeins = false;
         }
 
-        if (isIntestine == true)
-        {
-            currentBackground = smallIntestineInfoScreen;
-            isIntestine = false;
-        }
 
         if (IsKeyPressed(KEY_SPACE))
         {
-            currentBackground = organInfoScreen;
+            currentBackground = cardiovascularInfoScreen;
         }
 
         if (IsKeyPressed(KEY_ENTER))
@@ -192,12 +162,10 @@ int cardiovascularSystem(void)
         EndDrawing();
     }
 
-    UnloadTexture(brainInfoScreen);
-    UnloadTexture(liverInfoScreen);
-    UnloadTexture(stomachInfoScreen);
+    UnloadTexture(kidneyInfoScreen);
+    UnloadTexture(capillariesInfoScreen);
+    UnloadTexture(veinsInfoScreen);
     UnloadTexture(heartInfoScreen);
-    UnloadTexture(colonInfoScreen);
-    UnloadTexture(smallIntestineInfoScreen);
 
     CloseWindow();
 
