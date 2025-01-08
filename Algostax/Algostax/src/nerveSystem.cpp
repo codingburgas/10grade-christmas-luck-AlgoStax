@@ -7,7 +7,7 @@ int nerveSystem(void)
 
     InitWindow(screenWidth, screenHeight, "Nerve System");
 
-    Texture2D nerveInfoScreen = LoadTexture("../assets/backgrounds/NerveSystemInfo.png");
+    Texture2D nerveInfoScreen = LoadTexture("../assets/backgrounds/nerveSystemInfo.png");
     Texture2D brainInfoScreen = LoadTexture("../assets/backgrounds/BrainParts.png");
     Texture2D neuronInfoScreen = LoadTexture("../assets/backgrounds/NeuronParts.png");
     Texture2D EyeInfoScreen = LoadTexture("../assets/backgrounds/EyeParts.png");
@@ -16,12 +16,12 @@ int nerveSystem(void)
     Texture2D currentBackground = nerveInfoScreen;
 
     const char* facts[] = {
-        "Brain: Your brain generates enough power to light a bulb!",
-        "Kidneys: Kidneys filter 50 gallons of blood daily!",
-        "Stomach: Your stomach acid can dissolve metal!",
-        "Heart and Lungs: Your heart beats over 100,000 times daily!",
-        "Liver: Your liver can regenerate itself after damage!",
-        "Small Intestine: Small intestines are 20 feet long—hardly small!"
+        "The brain has 86 billion neurons.",
+        "Nerve impulses can travel up to 250 miles per hour.",
+        "The spinal cord, 18 inches long, links brain and body.",
+        "The peripheral nerves connect brain, spinal cord, and organs.",
+        "Neurons use electrical signals and chemicals to communicate.",
+        "The brain adapts through neuroplasticity."
     };
 
     Rectangle neuron = { 650, 120, 120, 20 };
@@ -36,6 +36,7 @@ int nerveSystem(void)
     bool isBrain = false;
     bool isSpinal = false;
     bool isEye = false;
+    bool goBack = false;
 
     SetTargetFPS(60);
 
@@ -66,12 +67,22 @@ int nerveSystem(void)
             0.0f,
             WHITE);
 
+        if (goBack == true) {
+            DrawText("< Press 'SPACE' to go back", 20, 10, 10, GRAY);
+        }
+
+        if (goBack == false)
+        {
+            DrawText("< Press 'ENTER' to go back", 20, 10, 10, GRAY);
+        }
+
         Vector2 mousePosition = GetMousePosition();
 
         if (showDialog && currentDialogIndex < (sizeof(facts) / sizeof(facts[0])))
         {
             DrawRectangle(130, screenHeight - 100, screenWidth - 250, 70, Fade(BLACK, 0.8f));
             DrawText(facts[currentDialogIndex], 140, screenHeight - 85, 20, WHITE);
+            DrawText("Press 'D' to continue", 850, screenHeight - 55, 10, GRAY);
         }
 
         if (CheckCollisionPointRec(mousePosition, neuron))
@@ -119,29 +130,34 @@ int nerveSystem(void)
         {
             currentBackground = neuronInfoScreen;
             isNeuron = false;
+            goBack = true;
         }
 
         if (isBrain == true)
         {
             currentBackground = brainInfoScreen;
             isBrain = false;
+            goBack = true;
         }
 
         if (isEye == true)
         {
             currentBackground = EyeInfoScreen;
             isEye = false;
+            goBack = true;
         }
 
         if (isSpinal == true)
         {
             currentBackground = SpinalCordInfoScreen;
             isSpinal = false;
+            goBack = true;
         }
 
         if (IsKeyPressed(KEY_SPACE))
         {
             currentBackground = nerveInfoScreen;
+            goBack = false;
         }
 
         if (IsKeyPressed(KEY_ENTER))

@@ -16,12 +16,12 @@ int skeletalSystem(void)
     Texture2D currentBackground = skeletalInfoScreen;
 
     const char* facts[] = {
-        "Brain: Your brain generates enough power to light a bulb!",
-        "Kidneys: Kidneys filter 50 gallons of blood daily!",
-        "Stomach: Your stomach acid can dissolve metal!",
-        "Heart and Lungs: Your heart beats over 100,000 times daily!",
-        "Liver: Your liver can regenerate itself after damage!",
-        "Small Intestine: Small intestines are 20 feet long—hardly small!"
+        "The human body has 206 bones, which provide structure and support.",
+        "Bones are constantly being remodeled, with new bone tissue replacing old tissue.",
+        "The femur (thigh bone) is the longest and strongest bone in the body.",
+        "The human skeleton accounts for about 15% of total body weight.",
+        "The smallest bone in the body is the **stapes** bone in the ear.",
+        "Bone marrow produces red and white blood cells."
     };
 
     Rectangle arms1 = { 230, 135, 120, 20 };
@@ -58,6 +58,7 @@ int skeletalSystem(void)
 
     int currentDialogIndex = 0;
     bool showDialog = true;
+    bool goBack = false;
 
     SetTargetFPS(60);
 
@@ -91,16 +92,20 @@ int skeletalSystem(void)
 
         Vector2 mousePosition = GetMousePosition();
 
-        if (showDialog && currentDialogIndex < (sizeof(facts) / sizeof(facts[0])))
+        if (goBack == true) {
+            DrawText("< Press 'SPACE' to go back", 20, 10, 10, GRAY);
+        }
+
+        if (goBack == false)
         {
-            DrawRectangle(130, screenHeight - 100, screenWidth - 250, 70, Fade(BLACK, 0.8f));
-            DrawText(facts[currentDialogIndex], 140, screenHeight - 85, 20, WHITE);
+            DrawText("< Press 'ENTER' to go back", 20, 10, 10, GRAY);
         }
 
         if (showDialog && currentDialogIndex < (sizeof(facts) / sizeof(facts[0])))
         {
             DrawRectangle(130, screenHeight - 100, screenWidth - 250, 70, Fade(BLACK, 0.8f));
             DrawText(facts[currentDialogIndex], 140, screenHeight - 85, 20, WHITE);
+            DrawText("Press 'D' to continue", 850, screenHeight - 55, 10, GRAY);
         }
 
         if (CheckCollisionPointRec(mousePosition, arms1) || CheckCollisionPointRec(mousePosition, arms3) || CheckCollisionPointRec(mousePosition, arms4) ||
@@ -158,29 +163,34 @@ int skeletalSystem(void)
         {
             currentBackground = armsInfoScreen;
             isArms = false;
+            goBack = true;
         }
 
         if (isChest == true)
         {
             currentBackground = chestInfoScreen;
             isChest = false;
+            goBack = true;
         }
 
         if (isPelvic == true)
         {
             currentBackground = absInfoScreen;
             isPelvic = false;
+            goBack = true;
         }
 
         if (isLegs == true)
         {
             currentBackground = legsInfoScreen;
             isLegs = false;
+            goBack = true;
         }
 
         if (IsKeyPressed(KEY_SPACE))
         {
             currentBackground = skeletalInfoScreen;
+            goBack = false;
         }
 
         if (IsKeyPressed(KEY_ENTER))

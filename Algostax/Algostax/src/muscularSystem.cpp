@@ -16,12 +16,12 @@ int muscularSystem(void)
     Texture2D currentBackground = muscularInfoScreen;
 
     const char* facts[] = {
-        "Brain: Your brain generates enough power to light a bulb!",
-        "Kidneys: Kidneys filter 50 gallons of blood daily!",
-        "Stomach: Your stomach acid can dissolve metal!",
-        "Heart and Lungs: Your heart beats over 100,000 times daily!",
-        "Liver: Your liver can regenerate itself after damage!",
-        "Small Intestine: Small intestines are 20 feet long—hardly small!"
+        "The human body has over 600 muscles that enable movement and stability.",
+        "Skeletal muscles are the only muscles we can control voluntarily.",
+        "Muscles can contract and relax, generating force to move bones.",
+        "The strongest muscle based on size is the **masseter** (jaw muscle).",
+        "Muscles make up about 40% of a person’s body weight.",
+        "Cardiac muscles, found in the heart, contract continuously without tiring."
     };
 
     Rectangle arms1 = { 180, 120, 120, 20 };
@@ -57,6 +57,7 @@ int muscularSystem(void)
 
     int currentDialogIndex = 0;
     bool showDialog = true;
+    bool goBack = false;
 
     SetTargetFPS(60);
 
@@ -89,10 +90,20 @@ int muscularSystem(void)
 
         Vector2 mousePosition = GetMousePosition();
 
+        if (goBack == true) {
+            DrawText("< Press 'SPACE' to go back", 20, 10, 10, GRAY);
+        }
+
+        if (goBack == false)
+        {
+            DrawText("< Press 'ENTER' to go back", 20, 10, 10, GRAY);
+        }
+
         if (showDialog && currentDialogIndex < (sizeof(facts) / sizeof(facts[0])))
         {
             DrawRectangle(130, screenHeight - 100, screenWidth - 250, 70, Fade(BLACK, 0.8f));
             DrawText(facts[currentDialogIndex], 140, screenHeight - 85, 20, WHITE);
+            DrawText("Press 'D' to continue", 850, screenHeight - 55, 10, GRAY);
         }
 
         if (CheckCollisionPointRec(mousePosition, arms1) || CheckCollisionPointRec(mousePosition, arms2) || CheckCollisionPointRec(mousePosition, arms3) || 
@@ -144,29 +155,34 @@ int muscularSystem(void)
         {
             currentBackground = armsInfoScreen;
             isArms = false;
+            goBack = true;
         }
         
         if (isChest == true)
         {
             currentBackground = chestInfoScreen;
             isChest = false;
+            goBack = true;
         }
 
         if (isAbs == true)
         {
             currentBackground = absInfoScreen;
             isAbs = false;
+            goBack = true;
         }
 
         if (isLegs == true)
         {
             currentBackground = legsInfoScreen;
             isLegs = false;
+            goBack = true;
         }
 
         if (IsKeyPressed(KEY_SPACE))
         {
             currentBackground = muscularInfoScreen;
+            goBack = false;
         }
 
         if (IsKeyPressed(KEY_ENTER))

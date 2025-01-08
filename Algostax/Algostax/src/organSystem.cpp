@@ -42,6 +42,7 @@ int organSystem(void)
     bool isHeart = false;
     bool isColon = false;
     bool isIntestine = false;
+    bool goBack = false;
 
     int currentDialogIndex = 0;
     bool showDialog = true;
@@ -77,10 +78,21 @@ int organSystem(void)
 
         Vector2 mousePosition = GetMousePosition();
 
+        if (goBack == true) {
+            DrawText("< Press 'SPACE' to go back", 20, 10, 10, GRAY);
+        }
+
+        if (goBack == false)
+        {
+            DrawText("< Press 'ENTER' to go back", 20, 10, 10, GRAY);
+        }
+        
+
         if (showDialog && currentDialogIndex < (sizeof(facts) / sizeof(facts[0])))
         {
             DrawRectangle(130, screenHeight - 100, screenWidth - 250, 70, Fade(BLACK, 0.8f));
             DrawText(facts[currentDialogIndex], 140, screenHeight - 85, 20, WHITE);
+            DrawText("Press 'D' to continue", 850, screenHeight - 55, 10, GRAY);
         }
 
 
@@ -145,41 +157,48 @@ int organSystem(void)
         {
             currentBackground = liverInfoScreen;
             isLiver = false;
+            goBack = true;
         }
 
         if (isBrain == true)
         {
             currentBackground = brainInfoScreen;
             isBrain = false;
+            goBack = true;
         }
 
         if (isStomach == true)
         {
             currentBackground = stomachInfoScreen;
             isStomach = false;
+            goBack = true;
         }
 
         if (isHeart == true)
         {
             currentBackground = heartInfoScreen;
             isHeart = false;
+            goBack = true;
         }
 
         if (isColon == true)
         {
             currentBackground = colonInfoScreen;
             isColon = false;
+            goBack = true;
         }
 
         if (isIntestine == true)
         {
             currentBackground = smallIntestineInfoScreen;
             isIntestine = false;
+            goBack = true;
         }
 
         if (IsKeyPressed(KEY_SPACE))
         {
             currentBackground = organInfoScreen;
+            goBack = false;
         }
 
         if (IsKeyPressed(KEY_ENTER))

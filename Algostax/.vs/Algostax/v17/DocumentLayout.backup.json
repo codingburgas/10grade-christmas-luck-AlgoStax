@@ -1,66 +1,66 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\",
+  "WorkspaceRootPath": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\cardiovascularSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\cardiovascularSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\skeletalSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\skeletalSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\nerveSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\nerveSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\nerveSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\organSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\organSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\cardiovascularSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\cardiovascularSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\muscularSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\muscularSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\cardiovascularSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\cardiovascularSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\characterWalk.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\characterWalk.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\nerveSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\nerveSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\organSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\organSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\skeletalSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\skeletalSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\muscularSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\organSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\organSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\muscularSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\muscularSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\characterWalk.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\characterWalk.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\muscularSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\muscularSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\characterWalk.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\nerveSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\nerveSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\organSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\organSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\characterWalk.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\characterWalk.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\skeletalSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\skeletalSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\skeletalSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\cardiovascularSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C83E663F-4253-4620-9D58-8BD52E545838}|Algostax\\Algostax.vcxproj|solutionrelative:Algostax\\src\\cardiovascularSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,17 +70,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\main.cpp",
+              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\main.cpp",
               "RelativeDocumentMoniker": "Algostax\\src\\main.cpp",
-              "ToolTip": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\main.cpp",
+              "ToolTip": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\main.cpp",
               "RelativeToolTip": "Algostax\\src\\main.cpp",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAE8AAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-02T20:11:14.961Z",
               "IsPinned": true,
@@ -88,75 +88,63 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "nerveSystem.h",
-              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\nerveSystem.h",
-              "RelativeDocumentMoniker": "Algostax\\src\\nerveSystem.h",
-              "ToolTip": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\nerveSystem.h",
-              "RelativeToolTip": "Algostax\\src\\nerveSystem.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-08T19:57:25.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "nerveSystem.cpp",
-              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\nerveSystem.cpp",
+              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\nerveSystem.cpp",
               "RelativeDocumentMoniker": "Algostax\\src\\nerveSystem.cpp",
-              "ToolTip": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\nerveSystem.cpp*",
+              "ToolTip": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\nerveSystem.cpp*",
               "RelativeToolTip": "Algostax\\src\\nerveSystem.cpp*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-08T19:45:32.068Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "cardiovascularSystem.cpp",
-              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\cardiovascularSystem.cpp",
+              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\cardiovascularSystem.cpp",
               "RelativeDocumentMoniker": "Algostax\\src\\cardiovascularSystem.cpp",
-              "ToolTip": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\cardiovascularSystem.cpp*",
-              "RelativeToolTip": "Algostax\\src\\cardiovascularSystem.cpp*",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFUAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\cardiovascularSystem.cpp",
+              "RelativeToolTip": "Algostax\\src\\cardiovascularSystem.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-08T18:50:25.501Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "organSystem.cpp",
-              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\organSystem.cpp",
+              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\organSystem.cpp",
               "RelativeDocumentMoniker": "Algostax\\src\\organSystem.cpp",
-              "ToolTip": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\organSystem.cpp*",
-              "RelativeToolTip": "Algostax\\src\\organSystem.cpp*",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAE8AAAAIAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\organSystem.cpp",
+              "RelativeToolTip": "Algostax\\src\\organSystem.cpp",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAAMIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-07T21:00:13.978Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "pch.h",
-              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\pch.h",
+              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\pch.h",
               "RelativeDocumentMoniker": "Algostax\\src\\pch.h",
-              "ToolTip": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\pch.h",
+              "ToolTip": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\pch.h",
               "RelativeToolTip": "Algostax\\src\\pch.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-06T21:21:24.887Z"
+              "WhenOpened": "2025-01-06T21:21:24.887Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "characterWalk.cpp",
-              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\characterWalk.cpp",
+              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\characterWalk.cpp",
               "RelativeDocumentMoniker": "Algostax\\src\\characterWalk.cpp",
-              "ToolTip": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\characterWalk.cpp",
+              "ToolTip": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\characterWalk.cpp",
               "RelativeToolTip": "Algostax\\src\\characterWalk.cpp",
               "ViewState": "AgIAABIAAAAAAAAAAAAAAEkAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -165,62 +153,87 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 9,
               "Title": "muscularSystem.h",
-              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\muscularSystem.h",
+              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\muscularSystem.h",
               "RelativeDocumentMoniker": "Algostax\\src\\muscularSystem.h",
-              "ToolTip": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\muscularSystem.h",
+              "ToolTip": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\muscularSystem.h",
               "RelativeToolTip": "Algostax\\src\\muscularSystem.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-05T21:42:45.45Z"
+              "WhenOpened": "2025-01-05T21:42:45.45Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "muscularSystem.cpp",
-              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\muscularSystem.cpp",
+              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\muscularSystem.cpp",
               "RelativeDocumentMoniker": "Algostax\\src\\muscularSystem.cpp",
-              "ToolTip": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\muscularSystem.cpp*",
-              "RelativeToolTip": "Algostax\\src\\muscularSystem.cpp*",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADkAAAAFAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\muscularSystem.cpp",
+              "RelativeToolTip": "Algostax\\src\\muscularSystem.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALgAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-05T21:42:49.464Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "main.h",
-              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\main.h",
+              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\main.h",
               "RelativeDocumentMoniker": "Algostax\\src\\main.h",
-              "ToolTip": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\main.h",
+              "ToolTip": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\main.h",
               "RelativeToolTip": "Algostax\\src\\main.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-05T22:31:47.464Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T22:31:47.464Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "skeletalSystem.cpp",
-              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\skeletalSystem.cpp",
+              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\skeletalSystem.cpp",
               "RelativeDocumentMoniker": "Algostax\\src\\skeletalSystem.cpp",
-              "ToolTip": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\skeletalSystem.cpp*",
-              "RelativeToolTip": "Algostax\\src\\skeletalSystem.cpp*",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAGEAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\skeletalSystem.cpp",
+              "RelativeToolTip": "Algostax\\src\\skeletalSystem.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALoAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-06T21:20:24.811Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 2,
+              "Title": "cardiovascularSystem.h",
+              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\cardiovascularSystem.h",
+              "RelativeDocumentMoniker": "Algostax\\src\\cardiovascularSystem.h",
+              "ToolTip": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\cardiovascularSystem.h",
+              "RelativeToolTip": "Algostax\\src\\cardiovascularSystem.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-08T18:50:41.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "nerveSystem.h",
+              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\nerveSystem.h",
+              "RelativeDocumentMoniker": "Algostax\\src\\nerveSystem.h",
+              "ToolTip": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\nerveSystem.h",
+              "RelativeToolTip": "Algostax\\src\\nerveSystem.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-08T19:57:25.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "organSystem.h",
-              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\organSystem.h",
+              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\organSystem.h",
               "RelativeDocumentMoniker": "Algostax\\src\\organSystem.h",
-              "ToolTip": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\organSystem.h",
+              "ToolTip": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\organSystem.h",
               "RelativeToolTip": "Algostax\\src\\organSystem.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -228,23 +241,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "cardiovascularSystem.h",
-              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\cardiovascularSystem.h",
-              "RelativeDocumentMoniker": "Algostax\\src\\cardiovascularSystem.h",
-              "ToolTip": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\cardiovascularSystem.h",
-              "RelativeToolTip": "Algostax\\src\\cardiovascularSystem.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-08T18:50:41.954Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "characterWalk.h",
-              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\characterWalk.h",
+              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\characterWalk.h",
               "RelativeDocumentMoniker": "Algostax\\src\\characterWalk.h",
-              "ToolTip": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\characterWalk.h",
+              "ToolTip": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\characterWalk.h",
               "RelativeToolTip": "Algostax\\src\\characterWalk.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -252,11 +253,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "skeletalSystem.h",
-              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\skeletalSystem.h",
+              "DocumentMoniker": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\skeletalSystem.h",
               "RelativeDocumentMoniker": "Algostax\\src\\skeletalSystem.h",
-              "ToolTip": "C:\\Users\\simeo\\Documents\\school projects\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\skeletalSystem.h",
+              "ToolTip": "C:\\Users\\simeo\\Documents\\10grade-christmas-luck-AlgoStax\\Algostax\\Algostax\\src\\skeletalSystem.h",
               "RelativeToolTip": "Algostax\\src\\skeletalSystem.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",

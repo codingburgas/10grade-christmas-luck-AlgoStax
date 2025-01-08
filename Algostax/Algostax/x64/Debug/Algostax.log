@@ -1,2 +1,6 @@
-﻿  cardiovascularSystem.cpp
-  Algostax.vcxproj -> C:\Users\Lacho\OneDrive - ПГКПИ - Бургас\Работен плот\Ne\10grade-christmas-luck-AlgoStax\Algostax\x64\Debug\Algostax.exe
+﻿  nerveSystem.cpp
+  LINK : C:\Users\simeo\Documents\10grade-christmas-luck-AlgoStax\Algostax\x64\Debug\Algostax.exe not found or not built by the last incremental link; performing full link
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Algostax.vcxproj -> C:\Users\simeo\Documents\10grade-christmas-luck-AlgoStax\Algostax\x64\Debug\Algostax.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
