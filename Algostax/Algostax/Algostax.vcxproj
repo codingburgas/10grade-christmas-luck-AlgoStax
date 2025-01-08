@@ -133,6 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\nerveSystem.h" />
     <ClInclude Include="src\organSystem.h" />
     <ClInclude Include="src\characterWalk.h" />
     <ClInclude Include="src\main.h" />
@@ -141,6 +142,7 @@
     <ClInclude Include="src\skeletalSystem.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\nerveSystem.cpp" />
     <ClCompile Include="src\organSystem.cpp" />
     <ClCompile Include="src\characterWalk.cpp" />
     <ClCompile Include="src\main.cpp" />
