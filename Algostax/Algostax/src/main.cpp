@@ -77,7 +77,7 @@ int main(void)
 
     bool initialMoveNorth = true;
     float initialMoveDistance = 100.0f;
-    float initialMoveSpeed = 50.0f;
+    float initialMoveSpeed = 150.0f;
 
     Rectangle screenBounds = { 90, 190, 840, 750 };
     bool interactionScreenActive = false;
@@ -281,11 +281,11 @@ int main(void)
 
         if (CheckCollisionRecs(characterRect, medTableInterraction))
         {
-            if (currentBackground.id == cardiovascularBackground.id)
+            if (currentBackground.id == nerveBackground.id)
             {
                 DrawText("Press E to interact", (float)characterRect.x, (float)characterRect.y - 20, 20, BLACK);
                 if (IsKeyDown(KEY_E)) {
-                    cardiovascularSystem();
+                    nerveSystem();
                 }
             }
         }

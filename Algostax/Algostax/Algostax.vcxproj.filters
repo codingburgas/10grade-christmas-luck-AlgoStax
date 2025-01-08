@@ -33,7 +33,11 @@
     <ClInclude Include="src\organSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="src\cardiovascularSystem.h">
+=======
+    <ClInclude Include="src\nerveSystem.h">
+>>>>>>> d51ddb26d0bbda79f5ebf3486f823faf19c5db7b
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -53,7 +57,11 @@
     <ClCompile Include="src\organSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="src\cardiovascularSystem.cpp">
+=======
+    <ClCompile Include="src\nerveSystem.cpp">
+>>>>>>> d51ddb26d0bbda79f5ebf3486f823faf19c5db7b
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
